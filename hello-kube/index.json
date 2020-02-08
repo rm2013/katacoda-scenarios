@@ -25,12 +25,6 @@
     "imageid": "kubernetes"
   },
   "assets": {
-    "client": [
-      {
-        "file": "greeting.yml",
-        "target": "/root/"
-      }
-    ],
     "host01": [
       {
         "file": "time.yml",
