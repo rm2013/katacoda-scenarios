@@ -2,6 +2,29 @@ This is your first step.
 
 ## Task
 
-This is an _example_ of creating a scenario and running a **command**
+Verifiy kubernetes is installed properly
 
-`echo 'Hello Kube'`{{execute}}
+`kubectl get pods` {{execute}}
+
+Create a namespace
+
+`kubectl create namespace testspace` {{execute}}
+
+Display the content of greeting.yml
+
+`cat /root/greeting/yml` {{execute}}
+
+Deploy greeting service and pods
+
+`kubectl apply -f /root/greeting.yml`
+
+Display the content of time.yml
+
+`cat /root/time/yml` {{execute}}
+
+Deploy time service and pods
+
+`kubectl apply -f /root/time.yml`
+
+
+
