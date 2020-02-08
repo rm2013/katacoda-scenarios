@@ -11,7 +11,7 @@
     "intro": {
       "text": "intro.md",
       "credits": "",
-      "courseData": "launch.sh"
+      "courseData": "/usr/bin/launch.sh"
     },
     "finish": {
       "text": "finish.md"
