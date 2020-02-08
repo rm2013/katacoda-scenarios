@@ -8,23 +8,23 @@ Verifiy kubernetes is installed properly
 
 Create a namespace
 
-`kubectl create namespace testspace` {{execute}}
+`kubectl create namespace testspace`{{execute}}
 
 Display the content of greeting.yml
 
-`cat /root/greeting/yml` {{execute}}
+`cat /root/greeting/yml`{{execute}}
 
 Deploy greeting service and pods
 
-`kubectl apply -f /root/greeting.yml`
+`kubectl apply -f /root/greeting.yml`{{execute}}
 
 Display the content of time.yml
 
-`cat /root/time/yml` {{execute}}
+`cat /root/time/yml`{{execute}}
 
 Deploy time service and pods
 
-`kubectl apply -f /root/time.yml`
+`kubectl apply -f /root/time.yml`{{execute}}
 
 
 
