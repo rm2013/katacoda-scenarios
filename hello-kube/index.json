@@ -9,7 +9,6 @@
       "text": "step1.md"
     }],
     "intro": {
-      "courseData": "/usr/bin/launch.sh",
       "text": "intro.md",
       "credits": ""
     },
