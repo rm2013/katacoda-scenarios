@@ -10,7 +10,8 @@
     }],
     "intro": {
       "text": "intro.md",
-      "credits": ""
+      "credits": "",
+      "courseData": "launch.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -22,5 +23,19 @@
   },
   "backend": {
     "imageid": "kubernetes"
+  },
+  "assets": {
+    "client": [
+      {
+        "file": "greeting.yml",
+        "target": "~/"
+      }
+    ],
+    "host01": [
+      {
+        "file": "time.yml",
+        "target": "~/"
+      }
+    ]
   }
 }
