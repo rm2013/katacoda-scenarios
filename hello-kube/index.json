@@ -13,6 +13,12 @@
       "text": "intro.md",
       "credits": ""
     },
+    "assets": {
+        "host01": [
+           {"file": "greeting.yml", "target": "/root/"},
+           {"file": "time.yml", "target": "/root/"}
+        ]
+    },
     "finish": {
       "text": "finish.md"
     }
@@ -23,13 +29,5 @@
   },
   "backend": {
     "imageid": "kubernetes"
-  },
-  "assets": {
-    "host01": [
-      {
-        "file": "time.yml",
-        "target": "/root/"
-      }
-    ]
   }
 }
