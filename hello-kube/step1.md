@@ -4,7 +4,7 @@ This is your first step.
 
 Verifiy kubernetes is installed properly
 
-`kubectl get pods` {{execute}}
+`kubectl get pods`{{execute}}
 
 Create a namespace
 
