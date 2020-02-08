@@ -26,14 +26,14 @@
   "assets": {
     "client": [
       {
-        "file": "greeting.yml",
-        "target": "~/"
+        "file": "assests/greeting.yml",
+        "target": "/root"
       }
     ],
     "host01": [
       {
         "file": "time.yml",
-        "target": "~/"
+        "target": "/root"
       }
     ]
   }
