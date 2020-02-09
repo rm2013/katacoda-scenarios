@@ -28,11 +28,9 @@ Deploy time service and pods
 
 ## Port forward greeting:8080 to host 8080  
 
-`kubectl -ntestspace svc/greeting 8080:8080 &`{{execute}}
 
 ## Test 
 
-`curl localhost:8080/greeting`{{execute}}
 
 
 
