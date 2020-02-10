@@ -15,7 +15,7 @@
     },
     "assets": {
         "host01": [
-           {"file": "*", "target": "/opt/"}
+           {"file": "greeting.yml", "target": "/opt/"}
         ]
     },
     "finish": {
