@@ -26,19 +26,11 @@ Deploy time service and pods
 
 `kubectl apply -f /root/time.yml`{{execute}}
 
-## Port forward greeting:8080 to host 8080  
-
-`kubectl -ntestspace port-forward svc/greeting 8080:8080 &'{{execute}}
 
 ## Link to access greeting
-https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com
+https://[[HOST_SUBDOMAIN]]-31006-[[KATACODA_HOST]].environments.katacoda.com
 
-## Start HTTP Server docker run -p 80:80 -d katacoda/docker-http-server{{execute}}
 
-## Test curl localhost{{execute}}
-Generated Web Link
-
-https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
 
 
 

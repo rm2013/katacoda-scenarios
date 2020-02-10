@@ -17,9 +17,11 @@ metadata:
 spec:
   ports:
     - name: tcp
+      nodePort: 31006
       port: 8080
       targetPort: 8080
       protocol: TCP
+  type: NodePort
   selector:
     app: greeting
 ---
@@ -36,7 +38,6 @@ spec:
   template:
     metadata:
       annotations:
-        linkerd.io/inject: enabled
       labels:
         app: greeting
     spec:
