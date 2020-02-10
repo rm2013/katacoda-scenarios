@@ -1,6 +1,6 @@
 {
-  "title": "Hello Kube Scenario",
-  "description": "Your Kube Scenario to test",
+  "title": "Hello Kube and Kafka Scenario",
+  "description": "Your Kube Scenario with Kafka",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
@@ -15,8 +15,7 @@
     },
     "assets": {
         "host01": [
-           {"file": "greeting.yml", "target": "/opt/"},
-           {"file": "time.yml", "target": "/opt/"}
+           {"file": "*", "target": "/opt/"}
         ]
     },
     "finish": {
