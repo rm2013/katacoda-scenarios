@@ -1,6 +1,6 @@
 {
-  "title": "Hello UI Scenario",
-  "description": "Your First UI",
+  "title": "Apache server on Ubuntu",
+  "description": "Installing and running an apache server on Ubuntu, an example of accessing apache from external brows",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
@@ -18,7 +18,7 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "uimessage1": ""
   },
   "backend": {
     "imageid": "bash"
