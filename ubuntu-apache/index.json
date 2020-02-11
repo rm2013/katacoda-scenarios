@@ -1,6 +1,6 @@
 {
   "title": "Apache server on Ubuntu",
-  "description": "Installing and running an apache server on Ubuntu, an example of accessing apache from external brows",
+  "description": "Installing and running an apache server on Ubuntu, an example of accessing apache from external browser",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
