@@ -8,7 +8,7 @@ This is an _example_ of creating a scenario and running a **command**
 
 `apt update`{{execute}}
 
-`apt install apache2`{{execute}}
+`apt install apache2 -y`{{execute}}
 
 `apache2 -version`{{execute}}
 
