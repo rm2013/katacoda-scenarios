@@ -15,7 +15,20 @@
     },
     "assets": {
         "host01": [
-           {"file": "greeting.yml", "target": "/opt/"}
+           {"file": "greeting.yml", "target": "/opt/"},
+           {"file": "time.yml", "target": "/opt/"},
+           {"file": "docker-storageclass-broker.yml", "target": "/opt/"},
+           {"file": "docker-storageclass-zookeeper.yml", "target": "/opt/"},
+           {"file": "10zookeeper-config.yml", "target": "/opt/"},
+           {"file": "200zoo-service.yml", "target": "/opt/"},
+           {"file": "21zoo-service.yml", "target": "/opt/"},
+           {"file": "30service.yml", "target": "/opt/"},
+           {"file": "50pzoo.yml", "target": "/opt/"},
+           {"file": "51zoo.yml", "target": "/opt/"},
+           {"file": "10broker-config.yml", "target": "/opt/"},
+           {"file": "20dns.yml", "target": "/opt/"},
+           {"file": "30bootstrap-service.yml", "target": "/opt/"},
+           {"file": "50kafka.yml", "target": "/opt/"}
         ]
     },
     "finish": {
