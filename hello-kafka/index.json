@@ -20,7 +20,7 @@
            {"file": "docker-storageclass-broker.yml", "target": "/opt/"},
            {"file": "docker-storageclass-zookeeper.yml", "target": "/opt/"},
            {"file": "10zookeeper-config.yml", "target": "/opt/"},
-           {"file": "20zoo-service.yml", "target": "/opt/"},
+           {"file": "20pzoo-service.yml", "target": "/opt/"},
            {"file": "21zoo-service.yml", "target": "/opt/"},
            {"file": "30service.yml", "target": "/opt/"},
            {"file": "50pzoo.yml", "target": "/opt/"},
