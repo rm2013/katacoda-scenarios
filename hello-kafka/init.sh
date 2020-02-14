@@ -2,6 +2,7 @@ mkdir /opt/storage-class
 mkdir /opt/zookeeper
 mkdir /opt/kafka
 
+cd /opt
 
 mv /opt/docker-storageclass-broker.yml storage-class/
 mv /opt/docker-storageclass-zookeeper.yml storage-class/
