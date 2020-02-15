@@ -10,25 +10,27 @@ Create a namespace
 
 `kubectl create namespace testspace`{{execute}}
 
-Display the content of greeting.yml
+Display the content of zookeeper.yml
 
-`cat /opt/greeting.yml`{{execute}}
+`cat /opt/zookeeper.yml`{{execute}}
 
-Deploy greeting service and pods
+Deploy zookeeper service and pods
 
-`kubectl apply -f /opt/greeting.yml`{{execute}}
+`kubectl apply -f /opt/zookeeper.yml`{{execute}}
 
-Display the content of time.yml
+Display the content of kafka.yml
 
-`cat /opt/time.yml`{{execute}}
+`cat /opt/kafka.yml`{{execute}}
 
-Deploy time service and pods
+Deploy kafka service and pods
 
-`kubectl apply -f /opt/time.yml`{{execute}}
+`kubectl apply -f /opt/kafka.yml`{{execute}}
 
+
+Find the topics
+`/opt/kafka-topics.sh --list'{{execute}}
 
 ## Link to access greeting
-https://[[HOST_SUBDOMAIN]]-31006-[[KATACODA_HOST]].environments.katacoda.com
 
 
 
