@@ -19,6 +19,9 @@
            {"file": "time.yml", "target": "/opt/"},
            {"file": "kafka.yml", "target": "/opt/"},
            {"file": "zookeeper.yml", "target": "/opt/"}
+           {"file": "kafka-topics.sh", "target": "/opt/"}
+           {"file": "kafka-console-consumer.sh", "target": "/opt/"}
+           {"file": "kafka-console-producer.sh", "target": "/opt/"}
         ]
     },
     "finish": {
