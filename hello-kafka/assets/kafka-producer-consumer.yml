@@ -45,7 +45,7 @@ spec:
         - env:
             - name: GRPC_PORT
               value: "8080"
-          image: rmohammad/kafka-producer-consumer:1
+          image: rmohammad/kafka-producer-consumer:5
           name: kafka-producer-consumer
           ports:
             - containerPort: 8080

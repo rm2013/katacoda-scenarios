@@ -23,7 +23,7 @@ spec:
         - zkGenConfig.sh && exec zkServer.sh start-foreground
         env:
         - name: ZK_REPLICAS
-          value: "3"
+          value: "1"
         - name: JMXAUTH
           value: "false"
         - name: JMXDISABLE
@@ -53,7 +53,7 @@ spec:
         - name: ZK_SERVER_PORT
           value: "2888"
         - name: ZK_SNAP_RETAIN_COUNT
-          value: "3"
+          value: "1"
         - name: ZK_SYNC_LIMIT
           value: "10"
         - name: ZK_TICK_TIME
@@ -64,7 +64,7 @@ spec:
           exec:
             command:
             - zkOk.sh
-          failureThreshold: 3
+          failureThreshold: 1
           initialDelaySeconds: 20
           periodSeconds: 10
           successThreshold: 1
@@ -84,7 +84,7 @@ spec:
           exec:
             command:
             - zkOk.sh
-          failureThreshold: 3
+          failureThreshold: 1
           initialDelaySeconds: 20
           periodSeconds: 10
           successThreshold: 1
