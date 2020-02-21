@@ -17,8 +17,13 @@
         "host01": [
            {"file": "greeting.yml", "target": "/opt/"},
            {"file": "time.yml", "target": "/opt/"},
-           {"file": "kafka.yml", "target": "/opt/"},
-           {"file": "zookeeper.yml", "target": "/opt/"},
+           {"file": "100zookeeper.yml", "target": "/opt/"},
+           {"file": "110zookeeper-headless.yml", "target": "/opt/"},
+           {"file": "120zookeeper-statefulset.yml", "target": "/opt/"},
+           {"file": "130zookeeper-disruptionbudget.yml", "target": "/opt/"},
+           {"file": "200kafka.yml", "target": "/opt/"},
+           {"file": "210kafka-headless.yml", "target": "/opt/"},
+           {"file": "220kafka-statefulset.yml", "target": "/opt/"},
            {"file": "kafka-producer-consumer.yml", "target": "/opt/"}
         ]
     },
