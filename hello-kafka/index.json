@@ -19,7 +19,7 @@
            {"file": "time.yml", "target": "/opt/"},
            {"file": "kafka.yml", "target": "/opt/"},
            {"file": "zookeeper.yml", "target": "/opt/"},
-           {"file": "kafka-prodcuer-consumer.yml", "target": "/opt/"}
+           {"file": "kafka-producer-consumer.yml", "target": "/opt/"}
         ]
     },
     "finish": {
