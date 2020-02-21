@@ -3,6 +3,8 @@
 
 cd /opt
 
+mkdir /opt/kafka
+
 mkdir /opt/kafka/data
 
 
