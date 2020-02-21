@@ -26,12 +26,21 @@ Deploy kafka service and pods
 
 `kubectl apply -f /opt/kafka.yml`{{execute}}
 
+Display the content of  kafka-producer-consumer.yml file
 
-Find the topics
-`/opt/kafka-topics.sh --list'{{execute}}
+`cat /opt/kafka-producer-consumer.yml`{{execute}}
 
-## Link to access greeting
+## Link to produce a message
+`curl -X POST http://localhost:31008/send/FirstMessage`{{execute}}
 
+## Link to list the consumed messages
+https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/messages
+
+## Link to produce an failure message - since message with fail is being treated as failure message in our example
+`curl -X POST http://localhost:31008/send/fail`{{execute}}
+
+## Link to list the failed messages from Dead Letter Queue
+https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/errors
 
 
 
