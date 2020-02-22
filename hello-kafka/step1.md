@@ -43,7 +43,7 @@ Wait for the kafka-producer-consumer pod to come up
 `watch kubectl -ntestspace get po`{{execute}}
 
 Expose the port 8080 so that we can post messages
-`kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080`{{execute}}
+`kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080 &`{{execute}}
 
 ## Link to produce a message
 `curl -X POST http://localhost:8080/send/FirstMessage`{{execute}}
