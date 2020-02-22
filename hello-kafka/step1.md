@@ -20,7 +20,7 @@ Deploy zookeeper service and pods
 
 Wait for the zookeeper pod to come up
 
-`kubectl -ntestspace get po`{{execute}}
+`watch kubectl -ntestspace get po`{{execute}}
 
 Deploy kafka service and tpods
 
@@ -28,7 +28,7 @@ Deploy kafka service and tpods
 
 Wait for  the kafka pod to come up
 
-`kubectl -ntestspace get po`{{execute}}
+`watch kubectl -ntestspace get po`{{execute}}
 
 Display the content of  kafka-producer-consumer.yml file
 
@@ -40,7 +40,7 @@ Deploy kafka service and tpods
 
 Wait for the kafka-producer-consumer pod to come up
 
-`kubectl -ntestspace get po`{{execute}}
+`watch kubectl -ntestspace get po`{{execute}}
 
 Expose the port 8080 so that we can post messages
 `kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080`{{execute}}
