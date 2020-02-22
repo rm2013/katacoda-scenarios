@@ -10,25 +10,32 @@ Create a namespace
 
 `kubectl create namespace testspace`{{execute}}
 
-Display the content of zookeeper.yml
+Deploy storagewclass and persistent volume
 
-`cat /opt/zookeeper.yml`{{execute}}
-
+`kubectl apply -f /opt/pv`{{execute}}
+ 
 Deploy zookeeper service and pods
 
-`kubectl apply -f /opt/zookeeper.yml`{{execute}}
+`kubectl apply -f /opt/zkp`{{execute}}
 
-Display the content of kafka.yml
+Wait till the zookeeper pod to come up
 
-`cat /opt/kafka.yml`{{execute}}
+`kubectl -ntestspace get po`{{execute}}
 
-Deploy kafka service and pods
+Deploy kafka service and tpods
 
-`kubectl apply -f /opt/kafka.yml`{{execute}}
+`kubectl apply -f /opt/kfk`{{execute}}
 
+Wait till the kafka pod to come up
+
+`kubectl -ntestspace get po`{{execute}}
 Display the content of  kafka-producer-consumer.yml file
 
 `cat /opt/kafka-producer-consumer.yml`{{execute}}
+
+Deploy kafka service and tpods
+
+`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
 
 ## Link to produce a message
 `curl -X POST http://localhost:31008/send/FirstMessage`{{execute}}
