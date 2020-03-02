@@ -1,6 +1,6 @@
 {
-  "title": "Hello Kube and Kafka Scenario",
-  "description": "Your Kube Scenario with Kafka",
+  "title": "Hello Kube, Kafka and istio Scenario",
+  "description": "Your Kube - kafka Scenario with istio",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
