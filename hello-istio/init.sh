@@ -25,7 +25,7 @@ kubectl create namespace testspace
 #Deploy storagewclass and persistent volume
 kubectl apply -f /opt/pv
 
-Deploy zookeeper service and pods
+#Deploy zookeeper service and pods
 kubectl apply -f /opt/zkp
 sleep 10
 #Wait for the zookeeper pod to come up
@@ -37,7 +37,7 @@ kubectl apply -f /opt/kfk
 
 #Wait for  the kafka pod to come up
 
-watch kubectl -ntestspace get po
+#watch kubectl -ntestspace get po
 
 #Display the content of  kafka-producer-consumer.yml file
 
@@ -49,7 +49,7 @@ kubectl apply -f /opt/kafka-producer-consumer.yml
 
 #Wait for the kafka-producer-consumer pod to come up
 
-watch kubectl -ntestspace get po
+#watch kubectl -ntestspace get po
 
 kubectl apply -f https://istio.io/operator.yaml
 
