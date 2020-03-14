@@ -51,22 +51,4 @@ kubectl apply -f /opt/kafka-producer-consumer.yml
 
 #watch kubectl -ntestspace get po
 
-kubectl apply -f https://istio.io/operator.yaml
-
-kubectl create ns istio-system
-
-kubectl apply -f - <<EOF
-apiVersion: install.istio.io/v1alpha1
-kind: IstioOperator
-metadata:
-  namespace: istio-system
-  name: example-istiocontrolplane
-spec:
-  profile: demo
-EOF
-
-kubectl get svc -n istio-system
-
-kubectl get pods -n istio-system
-
 

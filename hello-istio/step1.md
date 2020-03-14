@@ -42,6 +42,26 @@ Wait for the kafka-producer-consumer pod to come up
 
 `watch kubectl -ntestspace get po`{{execute}}
 
+
+
+`kubectl apply -f https://istio.io/operator.yaml`{{execute}}
+
+`kubectl create ns istio-system`{{execute}}
+
+`kubectl apply -f - <<EOF
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  namespace: istio-system
+  name: example-istiocontrolplane
+spec:
+  profile: demo
+EOF`{{execute}}
+
+`kubectl get svc -n istio-system`{{execute}}
+
+`kubectl get pods -n istio-system`{{execute}}
+
 Expose the port 8080 so that we can post messages
 `kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080 &`{{execute}}
 ``{{execute}}
