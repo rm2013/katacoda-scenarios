@@ -27,26 +27,26 @@ kubectl apply -f /opt/pv
 
 Deploy zookeeper service and pods
 kubectl apply -f /opt/zkp
-sleep 30000
-Wait for the zookeeper pod to come up
+sleep 10
+#Wait for the zookeeper pod to come up
 kubectl -ntestspace get po
 
-Deploy kafka service and tpods
+#Deploy kafka service and tpods
 
 kubectl apply -f /opt/kfk
 
-Wait for  the kafka pod to come up
+#Wait for  the kafka pod to come up
 
 watch kubectl -ntestspace get po
 
-Display the content of  kafka-producer-consumer.yml file
+#Display the content of  kafka-producer-consumer.yml file
 
 cat /opt/kafka-producer-consumer.yml
 
-Deploy kafka service and tpods
+#Deploy kafka service and tpods
 
 kubectl apply -f /opt/kafka-producer-consumer.yml
 
-Wait for the kafka-producer-consumer pod to come up
+#Wait for the kafka-producer-consumer pod to come up
 
 watch kubectl -ntestspace get po
