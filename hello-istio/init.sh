@@ -24,11 +24,11 @@ kubectl create namespace testspace
 
 #Deploy storagewclass and persistent volume
 kubectl apply -f /opt/pv
-sleep 90
+sleep 60
  
 #Deploy zookeeper service and pods
 kubectl apply -f /opt/zkp
-sleep 90
+sleep 60
 
 #Wait for the zookeeper pod to come up
 kubectl -ntestspace get po
@@ -37,7 +37,7 @@ kubectl -ntestspace get po
 
 kubectl apply -f /opt/kfk
 
-sleep 90
+sleep 60
 
 #Wait for  the kafka pod to come up
 
