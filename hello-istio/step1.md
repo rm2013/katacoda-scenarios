@@ -43,20 +43,14 @@ Wait for the kafka-producer-consumer pod to come up
 `watch kubectl -ntestspace get po`{{execute}}
 
 
+`curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.5.1  sh -'{{execute}}
 
-`kubectl apply -f https://istio.io/operator.yaml`{{execute}}
+`cd istio-1.5.1`{{execute}}
 
-`kubectl create ns istio-system`{{execute}}
+`export PATH=$PWD/bin:PATH`{{execute}}
 
-`kubectl apply -f - <<EOF
-apiVersion: install.istio.io/v1alpha1
-kind: IstioOperator
-metadata:
-  namespace: istio-system
-  name: example-istiocontrolplane
-spec:
-  profile: demo
-EOF`{{execute}}
+`istioctl manifest apply --set profile=demo`{{execute}}
+
 
 `kubectl get svc -n istio-system`{{execute}}
 
