@@ -6,48 +6,24 @@ Verifiy kubernetes is installed properly
 
 `kubectl get pods`{{execute}}
 
-Create a namespace
 
-`kubectl create namespace testspace`{{execute}}
-
-Deploy storagewclass and persistent volume
-
-`kubectl apply -f /opt/pv`{{execute}}
- 
-Deploy zookeeper service and pods
-
-`kubectl apply -f /opt/zkp`{{execute}}
-
-Wait for the zookeeper pod to come up
-
-`watch kubectl -ntestspace get po`{{execute}}
-
-Deploy kafka service and tpods
-
-`kubectl apply -f /opt/kfk`{{execute}}
-
-Wait for  the kafka pod to come up
-
-`watch kubectl -ntestspace get po`{{execute}}
-
-Display the content of  kafka-producer-consumer.yml file
-
-`cat /opt/kafka-producer-consumer.yml`{{execute}}
-
-Deploy kafka service and tpods
+Deploy kafka service and pods
 
 `kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
 
-Wait for the kafka-producer-consumer pod to come up
+Download Istio
 
-`watch kubectl -ntestspace get po`{{execute}}
+`curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.5.1  sh -`{{execute}}
 
-
-`curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.5.1  sh -'{{execute}}
+Change Directory to istio-1.5.1
 
 `cd istio-1.5.1`{{execute}}
 
+Add Istio/bin to the path
+
 `export PATH=$PWD/bin:PATH`{{execute}}
+
+Apply istio demo profile
 
 `istioctl manifest apply --set profile=demo`{{execute}}
 
