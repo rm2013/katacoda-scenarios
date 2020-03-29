@@ -9,7 +9,7 @@ Verifiy kubernetes is installed properly
 
 Deploy kafka service and pods
 
-`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
+#`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
 
 Download Istio
 
@@ -21,7 +21,7 @@ Change Directory to istio-1.5.1
 
 Add Istio/bin to the path
 
-`export PATH=$PWD/bin:PATH`{{execute}}
+`export PATH=$PWD/bin:$PATH`{{execute}}
 
 Apply istio demo profile
 
