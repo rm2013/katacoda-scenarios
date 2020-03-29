@@ -31,7 +31,7 @@ mv /opt/0* /opt/pv
 #sleep 60
 
 #Wait for the zookeeper pod to come up
-kubectl -ntestspace get po
+#kubectl -ntestspace get po
 
 #Deploy kafka service and tpods
 
