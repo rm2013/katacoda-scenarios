@@ -26,8 +26,7 @@
            {"file": "200kafka.yml", "target": "/opt/"},
            {"file": "210kafka-headless.yml", "target": "/opt/"},
            {"file": "220kafka-statefulset.yml", "target": "/opt/"},
-           {"file": "kafka-producer-consumer.yml", "target": "/opt/"},
-           {"file": "istio-1.5.1.zip", "target": "/opt/"}
+           {"file": "kafka-producer-consumer.yml", "target": "/opt/"}
         ]
     },
     "finish": {
