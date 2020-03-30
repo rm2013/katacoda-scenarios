@@ -53,6 +53,6 @@ kubectl apply -f /opt/kafka-producer-consumer.yml
 
 #Wait for the kafka-producer-consumer pod to come up
 
-watch kubectl -ntestspace get po
+kubectl -ntestspace get po
 
 
