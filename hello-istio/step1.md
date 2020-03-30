@@ -43,6 +43,8 @@ Expose the port 8080 so that we can post messages
 `curl -X POST http://localhost:8080/send/ThirdMessage`{{execute}}
 `curl -X POST http://localhost:8080/send/FourthMessage`{{execute}}
 
+https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/dashboard/db/istio-mesh-dashboard
+
 ## Link to list the consumed messages
 https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/messages
 
