@@ -37,7 +37,6 @@
         ],
         "intro": {
             "text": "intro.md",
-            "code": "courseBase.sh",
             "courseData": "courseBase.sh",
             "credits": ""
         },
