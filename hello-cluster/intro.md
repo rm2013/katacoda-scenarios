@@ -1,6 +1,4 @@
-Welcome to your kube cluster  Katacoda Scenario!
-
-
+Welcome to your kube cluster  with kube admin Katacoda Scenario!
 
 In this scenario you'll learn how to bootstrap a Kubernetes cluster using Kubeadm.
 
