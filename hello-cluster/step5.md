@@ -6,11 +6,12 @@ Using Kubectl, it's possible to deploy pods. Commands are always issued for the 
 
 The command below create a Pod based on the Docker Image katacoda/docker-http-server.
 
-kubectl run http --image=katacoda/docker-http-server:latest --replicas=1{{execute HOST1}}
+`kubectl run http --image=katacoda/docker-http-server:latest --replicas=1`{{execute HOST1}}
 
-The status of the Pod creation can be viewed using kubectl get pods{{execute HOST1}}
+The status of the Pod creation can be viewed using 
+`kubectl get pods`{{execute HOST1}}
 
 Once running, you can see the Docker Container running on the node.
 
-docker ps | grep docker-http-server{{execute HOST2}}
+`docker ps | grep docker-http-server`{{execute HOST2}}
 

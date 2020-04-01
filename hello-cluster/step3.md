@@ -6,10 +6,9 @@ The cluster has now been initialised. The Master node will manage the cluster, w
 
 To manage the Kubernetes cluster, the client configuration and certificates are required. This configuration is created when kubeadm initialises the cluster. The command copies the configuration to the users home directory and sets the environment variable for use with the CLI.
 
-sudo cp /etc/kubernetes/admin.conf $HOME/
-sudo chown $(id -u):$(id -g) $HOME/admin.conf
-export KUBECONFIG=$HOME/admin.conf
-```{{execute HOST1}}
+`sudo cp /etc/kubernetes/admin.conf $HOME/`{{execute HOST1}}
+`sudo chown $(id -u):$(id -g) $HOME/admin.conf`{{execute HOST1}}
+`export KUBECONFIG=$HOME/admin.conf`{{execute HOST1}}
 
 The Kubernetes CLI, known as _kubectl_, can now use the configuration to access the cluster. For example, the command below will return the two nodes in our cluster.
 
