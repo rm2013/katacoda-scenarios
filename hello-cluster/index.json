@@ -29,6 +29,10 @@
             {
                 "title": "Step 6 - Deploy Dashboard",
                 "text": "step6.md"
+            },
+            {
+                "title": "Step 7 - Deploy Istio",
+                "text": "step7.md"
             }
         ],
         "intro": {
