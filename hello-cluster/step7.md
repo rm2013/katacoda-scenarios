@@ -30,13 +30,13 @@ Add istio to path
 `kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-v3.yaml`{{execute HOST1}}
 `istioctl get virtualservices`{{execute HOST1}}
 
-https://[[HOST1_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage
+https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage
 
-https://[[HOST1_SUBDOMAIN]]-30000-[[KATACODA_HOST]].environments.katacoda.com/dashboard/db/istio-mesh-dashboard
+https://[[HOST_SUBDOMAIN]]-30000-[[KATACODA_HOST]].environments.katacoda.com/dashboard/db/istio-mesh-dashboard
 
-https://[[HOST1_SUBDOMAIN]]-16686-[[KATACODA_HOST]].environments.katacoda.com/
+https://[[HOST_SUBDOMAIN]]-16686-[[KATACODA_HOST]].environments.katacoda.com/
 
-https://[[HOST1_SUBDOMAIN]]-8088-[[KATACODA_HOST]].environments.katacoda.com/dotviz
+https://[[HOST_SUBDOMAIN]]-8088-[[KATACODA_HOST]].environments.katacoda.com/dotviz
 
 When the dashboard was deployed, it was assigned a NodePort of 30000. This makes the dashboard available to outside of the cluster and viewable at https://[[HOST2_SUBDOMAIN]]-30000-[[KATACODA_HOST]].environments.katacoda.com/
 
