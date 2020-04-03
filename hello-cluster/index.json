@@ -45,6 +45,7 @@
         },
         "assets": {
           "host01": [{"file": "dashboard.yaml", "target": "/root"}]
+          "host01": [{"file": "katacoda.yml", "target": "/root"}]
         }
     },
     "environment": {

@@ -17,7 +17,7 @@ Add istio to path
 `kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute HOST1}}
 `kubectl get pods -n istio-system`{{execute HOST1}}
 
-`export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')'`{{execute HOST1}}
+`export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')`{{execute HOST1}}
 
 `sed 's/extip/$EXT_IP/g' /root/katacoda.yml`{{execute HOST1}}
 
