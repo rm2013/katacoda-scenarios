@@ -10,4 +10,7 @@ The command below will initialise the cluster with a known token to simplify the
 
 `/opt/launch-kubeadm.sh`{{execute HOST1}}
 
-Use the recommended command on Host2 to join the node the cluster
+Wait until the command completes.
+
+Use the recommended kubeadm command on Host2 to join it to  the cluster. This step is needed before continuing to the next step
+
