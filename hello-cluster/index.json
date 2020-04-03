@@ -51,7 +51,8 @@
                        {"file": "130zookeeper-disruptionbudget.yml", "target": "/opt"},
                        {"file": "200kafka.yml", "target": "/opt"},
                        {"file": "210kafka-headless.yml", "target": "/opt"},
-                       {"file": "220kafka-statefulset.yml", "target": "/opt"}
+                       {"file": "220kafka-statefulset.yml", "target": "/opt"},
+		       {"file": "init.sh", "target": "/opt"}
 	            ]
         }
     },
