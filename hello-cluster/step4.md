@@ -1,14 +1,17 @@
 
 
-The Container Network Interface (CNI) defines how the different nodes and their workloads should communicate. There are multiple network providers available, some are listed here.
+The state of the two nodes in the cluster should now be Ready. This means that our deployments can be scheduled and launched.
 
-## Task
+Using Kubectl, it's possible to deploy pods. Commands are always issued for the Master with each node only responsible for executing the workloads.
 
-In this scenario we'll use WeaveWorks. The deployment definition can be viewed at cat /opt/weave-kube{{execute HOST1}}
+The command below create a Pod based on the Docker Image katacoda/docker-http-server.
 
-This can be deployed using kubectl apply.
+`kubectl run http --image=katacoda/docker-http-server:latest --replicas=1`{{execute HOST1}}
 
-Weave will now deploy as a series of Pods on the cluster. The status of this can be viewed using the command 
-`kubectl get pod -n kube-system`{{execute HOST1}}
+The status of the Pod creation can be viewed using 
+`kubectl get pods`{{execute HOST1}}
 
+Once running, you can see the Docker Container running on the node.
+
+`docker ps | grep docker-http-server`{{execute HOST2}}
 

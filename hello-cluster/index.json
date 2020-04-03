@@ -11,28 +11,24 @@
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Join Cluster",
+                "title": "Step 2 - View Nodes",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - View Nodes",
+                "title": "Step 3 - Deploy Container Networking Interface (CNI)",
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Deploy Container Networking Interface (CNI)",
+                "title": "Step 4 - Deploy Pod",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Deploy Pod",
+                "title": "Step 5 - Deploy Dashboard",
                 "text": "step5.md"
             },
             {
-                "title": "Step 6 - Deploy Dashboard",
+                "title": "Step 6 - Deploy Istio",
                 "text": "step6.md"
-            },
-            {
-                "title": "Step 7 - Deploy Istio",
-                "text": "step7.md"
             }
         ],
         "intro": {

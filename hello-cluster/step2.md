@@ -1,11 +1,14 @@
 
 
-Once the Master has initialised, additional nodes can join the cluster as long as they have the correct token. The tokens can be managed via kubeadm token, for example kubeadm token list{{execute}}.
+The cluster has now been initialised. The Master node will manage the cluster, while our one worker node will run our container workloads.
 
 ## Task
 
-On the second node, run the command to join the cluster providing the IP address of the Master node.
 
+The Kubernetes CLI, known as _kubectl_, can now use the configuration to access the cluster. For example, the command below will return the two nodes in our cluster.
 
-This is the same command provided after the Master has been initialised.
+`kubectl get nodes`{{execute HOST1}}
+
+At this point, the Nodes may not be ready. This is because the Container Network Interface has not been deployed. This will be fixed within the next step.
+
 
