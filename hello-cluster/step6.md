@@ -14,14 +14,25 @@ Add istio to path
 
 `kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml -n istio-system`{{execute HOST1}}
 
+
 `kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute HOST1}}
+
+Check the status of the pods
 `kubectl get pods -n istio-system`{{execute HOST1}}
 
+Extract the Host1 IP
 `export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')`{{execute HOST1}}
 
-`sed -i -- 's/$EXT_IP/'$EXT_IP'/g' /root/katacoda.yml`{{execute HOST1}}
+Update the katacode service file with the external IP
+`sed -i -- 's/extip/'$EXT_IP'/g' /root/katacoda.yml`{{execute HOST1}}
+
 
 `kubectl apply -f /root/katacoda.yml`{{execute HOST1}}
+
+Enable istio-injection for the default namespace
+
+`kubectl label namespace default istio-injection=enabled`{{execute HOST1}}
+
 `kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)`{{execute HOST1}}
 `kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml`{{execute HOST1}}
 `kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml`{{execute HOST1}}

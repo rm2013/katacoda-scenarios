@@ -20,8 +20,7 @@ mv /opt/0* /opt/pv
 kubectl create namespace testspace
 
 #Deploy storagewclass and persistent volume
-#kubectl apply -f /opt/pv
-#sleep 60
+kubectl apply -f /opt/pv
  
 #Deploy zookeeper service and pods
 #kubectl apply -f /opt/zkp
