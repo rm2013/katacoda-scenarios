@@ -15,6 +15,10 @@
                 "text": "step2.md"
             },
             {
+                "title": "Step 3 - Add Kafka",
+                "text": "step3.md"
+            },
+            {
                 "title": "Step 4 - Deploy Pod",
                 "text": "step4.md"
             },
@@ -38,7 +42,16 @@
         "assets": {
           "host01": [
                        {"file": "dashboard.yaml", "target": "/root"},
-                       {"file": "katacoda.yml", "target": "/root"}
+                       {"file": "katacoda.yml", "target": "/root"},
+                       {"file": "000storageclass.yml", "target": "/opt"},
+                       {"file": "010pv-volume.yml", "target": "/opt"},
+                       {"file": "100zookeeper.yml", "target": "/opt"},
+                       {"file": "110zookeeper-headless.yml", "target": "/opt"},
+                       {"file": "120zookeeper-statefulset.yml", "target": "/opt"},
+                       {"file": "130zookeeper-disruptionbudget.yml", "target": "/opt"},
+                       {"file": "200kafka.yml", "target": "/opt"},
+                       {"file": "210kafka-headless.yml", "target": "/opt"},
+                       {"file": "220kafka-statefulset.yml", "target": "/opt"}
 	            ]
         }
     },

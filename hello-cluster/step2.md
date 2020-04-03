@@ -8,6 +8,5 @@ The Kubernetes CLI, known as _kubectl_, can now use the configuration to access 
 
 `kubectl get nodes`{{execute HOST1}}
 
-At this point, the Nodes may not be ready. This is because the Container Network Interface has not been deployed. This will be fixed within the next step.
 
 

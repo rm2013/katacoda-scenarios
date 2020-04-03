@@ -10,5 +10,4 @@ The command below will initialise the cluster with a known token to simplify the
 
 `/opt/launch-kubeadm.sh`{{execute HOST1}}
 
-In production, it's recommend to exclude the token causing kubeadm to generate one on your behalf.
-
+Use the recommended command on Host2 to join the node the cluster

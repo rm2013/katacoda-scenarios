@@ -19,7 +19,7 @@ Add istio to path
 
 `export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')`{{execute HOST1}}
 
-`sed 's/extip/$EXT_IP/g' /root/katacoda.yml`{{execute HOST1}}
+`sed -i -- 's/$EXT_IP/'$EXT_IP'/g' /root/katacoda.yml`{{execute HOST1}}
 
 `kubectl apply -f /root/katacoda.yml`{{execute HOST1}}
 `kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)`{{execute HOST1}}
