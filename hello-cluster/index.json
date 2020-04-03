@@ -11,24 +11,20 @@
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - View Nodes",
+                "title": "Step 2 - Add Kafka",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Add Kafka",
+                "title": "Step 3 - Deploy Pod",
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Deploy Pod",
+                "title": "Step 4 - Deploy Dashboard",
                 "text": "step4.md"
             },
             {
-                "title": "Step 5 - Deploy Dashboard",
+                "title": "Step 5 - Deploy Istio",
                 "text": "step5.md"
-            },
-            {
-                "title": "Step 6 - Deploy Istio",
-                "text": "step6.md"
             }
         ],
         "intro": {

@@ -1,60 +1,17 @@
-Prepare files to run kafka elements
-`/opt/init.sh`{{execute HOST1}}
-
-Deploy zookeeper service and pods
-
-`kubectl apply -f /opt/zkp`{{execute HOST1}}
-
-Wait for the zookeeper pod to come up
-
-`watch kubectl -ntestspace get po`{{execute HOST1}}
-
-Clear the command when the pods come up
-`clear`{{execute interrupt HOST1}}
-
-Deploy kafka service and tpods
-
-`kubectl apply -f /opt/kfk`{{execute HOST1}}
-
-Wait for  the kafka pod to come up
-
-`watch kubectl -ntestspace get po`{{execute HOST1}}
-
-Clear the command when the pods come up
-`clear`{{execute interrupt HOST1}}
-
-Display the content of  kafka-producer-consumer.yml file
-
-`cat /opt/kafka-producer-consumer.yml`{{execute HOST1}}
-
-Deploy kafka service and tpods
-
-`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute HOST1}}
-
-Wait for the kafka-producer-consumer pod to come up
-
-`watch kubectl -ntestspace get po`{{execute HOST1}}
-
-Clear the command when the pods come up
-`clear`{{execute  interruptHOST1}}
-
-Expose the port 8080 so that we can post messages
-`kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080 &`{{execute HOST1}}
 
 
-## Link to produce a message
-`curl -X POST http://localhost:8080/send/FirstMessage`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/SecondMessage`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/ThirdMessage`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/FourthMessage`{{execute HOST1}}
+The state of the two nodes in the cluster should now be Ready. This means that our deployments can be scheduled and launched.
 
-## Link to list the consumed messages
-https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/messages
+Using Kubectl, it's possible to deploy pods. Commands are always issued for the Master with each node only responsible for executing the workloads.
 
-## Link to produce an failure message - since message with fail is being treated as failure message in our example
-`curl -X POST http://localhost:8080/send/failOne`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/failTwo`{{execute HOST1}}
+The command below create a Pod based on the Docker Image katacoda/docker-http-server.
 
-## Link to list the failed messages from Dead Letter Queue
-https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/errors
+`kubectl run http --image=katacoda/docker-http-server:latest --replicas=1`{{execute HOST1}}
+
+The status of the Pod creation can be viewed using 
+`kubectl get pods`{{execute HOST1}}
+
+Once running, you can see the Docker Container running on the node.
+
+`docker ps | grep docker-http-server`{{execute HOST2}}
 
