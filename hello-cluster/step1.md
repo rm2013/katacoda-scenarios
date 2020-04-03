@@ -8,7 +8,7 @@ The first stage of initialising the cluster is to launch the master node. The ma
 
 The command below will initialise the cluster with a known token to simplify the following steps.
 
-`kubeadm init`{{execute HOST1}}
+`/opt/launch-kubeadm.sh`{{execute HOST1}}
 
 In production, it's recommend to exclude the token causing kubeadm to generate one on your behalf.
 
