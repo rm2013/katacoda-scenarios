@@ -56,3 +56,10 @@ Run the command to load the product page calls
   echo -n .;
   sleep 0.2
 done`{{execute HOST1}}
+
+Run the command to load the product page calls from node
+`while true; do
+  curl -s https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage > /dev/null
+  echo -n .;
+  sleep 0.2
+done`{{execute HOST2}}
