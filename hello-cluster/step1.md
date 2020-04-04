@@ -12,7 +12,7 @@ The command below will initialise the cluster with a known token to simplify the
 
 Wait until the command completes.
 
-Use the recommended kubeadm command on Host2 to join it to  the cluster. This step is needed before continuing to the next step
+Then run the recommended kubeadm command on Host2 to join it to the cluster. This step is needed before continuing on to the next step
 
 Run the following command to verify a master and a node exists
 `kubectl get nodes`{{execute HOST1}}
