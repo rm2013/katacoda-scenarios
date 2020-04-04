@@ -8,11 +8,13 @@
         "steps": [
             {
                 "title": "Step 1 - Initialise Master",
-                "text": "step1.md"
+                "text": "step1.md",
+		"code": "/opt/launch-kubeadm.sh"
             },
             {
                 "title": "Step 2 - Add Kafka",
-                "text": "step2.md"
+                "text": "step2.md",
+		"code": "/opt/init.sh"
             },
             {
                 "title": "Step 3 - Deploy Pod",

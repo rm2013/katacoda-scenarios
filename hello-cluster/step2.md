@@ -23,10 +23,6 @@ Wait for  the kafka pod to come up
 Clear the command when the pods come up
 `clear`{{execute interrupt HOST1}}
 
-Display the content of  kafka-producer-consumer.yml file
-
-`cat /opt/kafka-producer-consumer.yml`{{execute HOST1}}
-
 Deploy kafka service and tpods
 
 `kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute HOST1}}
