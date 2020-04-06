@@ -1,4 +1,4 @@
-Welcome to your kube cluster  with kube admin Katacoda Scenario!
+Welcome to your Katacoda Scenario with kube cluster with kube admin, Kafka and Istio!
 
 In this scenario you'll learn how to bootstrap a Kubernetes cluster using Kubeadm.
 

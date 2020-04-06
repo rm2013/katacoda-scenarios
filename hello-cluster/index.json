@@ -1,9 +1,9 @@
 {
-    "pathwayTitle": "Kubernetes Cluster",
-    "title": "Getting Started With Kube Cluster",
-    "description": "Learn how to deploy a Kube cluster",
+    "pathwayTitle": "Kubernetes Cluster, with Kafka and Istio",
+    "title": "Getting Started With Kube Cluster with Kafka and Istio",
+    "description": "Learn how to deploy a Kube cluster, with Kafka and Istio",
     "difficulty": "intermediate",
-    "time": "10-15 minutes",
+    "time": "30 minutes",
     "details": {
         "steps": [
             {
