@@ -47,9 +47,11 @@ sleep 60
 
 kubectl apply -f /opt/kafka-producer-consumer.yml
 
-sleep 10
+sleep 20
 
 #Wait for the kafka-producer-consumer pod to come up
+
+kubectl run http --image=katacoda/docker-http-server:latest --replicas=1
 
 kubectl -ntestspace get po
 

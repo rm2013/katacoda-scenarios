@@ -1,32 +1,6 @@
 Prepare files to run kafka elements
 `chmod +x /opt/init.sh && /opt/init.sh`{{execute HOST1}}
 
-Deploy zookeeper service and pods
-
-`kubectl apply -f /opt/zkp`{{execute HOST1}}
-
-Wait for the zookeeper pod to come up
-
-`watch kubectl -ntestspace get po`{{execute HOST1}}
-
-Clear the command when the pods come up
-`clear`{{execute interrupt HOST1}}
-
-Deploy kafka service and tpods
-
-`kubectl apply -f /opt/kfk`{{execute HOST1}}
-
-Wait for  the kafka pod to come up
-
-`watch kubectl -ntestspace get po`{{execute HOST1}}
-
-Clear the command when the pods come up
-`clear`{{execute interrupt HOST1}}
-
-Deploy kafka service and tpods
-
-`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute HOST1}}
-
 Wait for the kafka-producer-consumer pod to come up
 
 `watch kubectl -ntestspace get po`{{execute HOST1}}

@@ -15,16 +15,12 @@
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Deploy Pod",
+                "title": "Step 3 - Deploy Dashboard",
                 "text": "step3.md"
             },
             {
-                "title": "Step 4 - Deploy Dashboard",
+                "title": "Step 4 - Deploy Istio",
                 "text": "step4.md"
-            },
-            {
-                "title": "Step 5 - Deploy Istio",
-                "text": "step5.md"
             }
         ],
         "intro": {
