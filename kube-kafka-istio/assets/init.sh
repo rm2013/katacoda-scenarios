@@ -23,21 +23,21 @@ kubectl create namespace testspace
 kubectl apply -f /opt/pv
  
 #Deploy zookeeper service and pods
-#kubectl apply -f /opt/zkp
-#sleep 60
+kubectl apply -f /opt/zkp
+sleep 30
 
 #Wait for the zookeeper pod to come up
-#kubectl -ntestspace get po
+kubectl -ntestspace get po
 
 #Deploy kafka service and tpods
 
-#kubectl apply -f /opt/kfk
+kubectl apply -f /opt/kfk
 
-#sleep 60
+sleep 60
 
 #Wait for  the kafka pod to come up
 
-# kubectl -ntestspace get po
+ kubectl -ntestspace get po
 
 #Display the content of  kafka-producer-consumer.yml file
 
@@ -45,10 +45,12 @@ kubectl apply -f /opt/pv
 
 #Deploy kafka service and tpods
 
-#kubectl apply -f /opt/kafka-producer-consumer.yml
+kubectl apply -f /opt/kafka-producer-consumer.yml
+
+sleep 10
 
 #Wait for the kafka-producer-consumer pod to come up
 
-#kubectl -ntestspace get po
+kubectl -ntestspace get po
 
 
