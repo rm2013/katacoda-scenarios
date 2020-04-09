@@ -1,15 +1,30 @@
+Prepare files to run kafka elements
+`chmod +x /opt/init.sh && /opt/init.sh`{{execute HOST1}}
+
+Wait for the kafka-producer-consumer pod to come up
+
+`watch kubectl -ntestspace get po`{{execute HOST1}}
+
+Clear the command when the pods come up
+`clear`{{execute interrupt HOST1}}
+
+Expose the port 8080 so that we can post messages
+`kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080 &`{{execute HOST1}}
 
 
-Kubernetes has a web-based dashboard UI giving visibility into the Kubernetes cluster.
+## Link to produce a message
+`curl -X POST http://localhost:8080/send/FirstMessage`{{execute HOST1}}
+`curl -X POST http://localhost:8080/send/SecondMessage`{{execute HOST1}}
+`curl -X POST http://localhost:8080/send/ThirdMessage`{{execute HOST1}}
+`curl -X POST http://localhost:8080/send/FourthMessage`{{execute HOST1}}
 
-## Task
+## Link to list the consumed messages
+https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/messages
 
-Deploy the dashboard yaml with the command 
-`kubectl apply -f dashboard.yaml`{{execute HOST1}}
+## Link to produce an failure message - since message with fail is being treated as failure message in our example
+`curl -X POST http://localhost:8080/send/failOne`{{execute HOST1}}
+`curl -X POST http://localhost:8080/send/failTwo`{{execute HOST1}}
 
-The dashboard is deployed into the kube-system namespace. View the status of the deployment with 
-`kubectl get pods -n kube-system`{{execute HOST1}}
-
-When the dashboard was deployed, it was assigned a NodePort of 30000. This makes the dashboard available to outside of the cluster and viewable at https://[[HOST2_SUBDOMAIN]]-30000-[[KATACODA_HOST]].environments.katacoda.com/
-
+## Link to list the failed messages from Dead Letter Queue
+https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/errors
 

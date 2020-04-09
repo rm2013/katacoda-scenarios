@@ -19,6 +19,8 @@ mv /opt/0* /opt/pv
 #Create a namespace
 kubectl create namespace testspace
 
+kubectl label namespace testspace istio-injection=enabled
+
 #Deploy storagewclass and persistent volume
 kubectl apply -f /opt/pv
  

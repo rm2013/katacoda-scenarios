@@ -11,16 +11,12 @@
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Add Kafka",
+                "title": "Step 2 - Install Istio",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Deploy Dashboard",
+                "title": "Step 3 - Deploy Kafka",
                 "text": "step3.md"
-            },
-            {
-                "title": "Step 4 - Deploy Istio",
-                "text": "step4.md"
             }
         ],
         "intro": {

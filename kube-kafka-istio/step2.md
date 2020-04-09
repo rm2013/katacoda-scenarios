@@ -1,30 +1,65 @@
-Prepare files to run kafka elements
-`chmod +x /opt/init.sh && /opt/init.sh`{{execute HOST1}}
 
-Wait for the kafka-producer-consumer pod to come up
+Install Istio
 
-`watch kubectl -ntestspace get po`{{execute HOST1}}
+## Task
 
-Clear the command when the pods come up
-`clear`{{execute interrupt HOST1}}
+Download  Istio 
+`curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.0.0 sh -`{{execute HOST1}}
 
-Expose the port 8080 so that we can post messages
-`kubectl -ntestspace port-forward svc/kafka-producer-consumer 8080:8080 &`{{execute HOST1}}
+Add istio to path
+`export PATH="$PATH:/root/istio-1.0.0/bin"`{{execute HOST1}}
+
+`cd /root/istio-1.0.0`{{execute HOST1}}
 
 
-## Link to produce a message
-`curl -X POST http://localhost:8080/send/FirstMessage`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/SecondMessage`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/ThirdMessage`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/FourthMessage`{{execute HOST1}}
+`kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml -n istio-system`{{execute HOST1}}
 
-## Link to list the consumed messages
-https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/messages
 
-## Link to produce an failure message - since message with fail is being treated as failure message in our example
-`curl -X POST http://localhost:8080/send/failOne`{{execute HOST1}}
-`curl -X POST http://localhost:8080/send/failTwo`{{execute HOST1}}
+`kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute HOST1}}
 
-## Link to list the failed messages from Dead Letter Queue
-https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com/errors
+Check the status of the pods
+`kubectl get pods -n istio-system`{{execute HOST1}}
 
+Extract the Host1 IP
+`export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')`{{execute HOST1}}
+
+Update the katacode service file with the external IP
+`sed -i -- 's/extip/'$EXT_IP'/g' /root/katacoda.yml`{{execute HOST1}}
+
+
+`kubectl apply -f /root/katacoda.yml`{{execute HOST1}}
+
+Enable istio-injection for the default namespace
+
+`kubectl label namespace default istio-injection=enabled`{{execute HOST1}}
+
+`kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml)`{{execute HOST1}}
+`kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml`{{execute HOST1}}
+`kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml`{{execute HOST1}}
+`kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml`{{execute HOST1}}
+`kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml`{{execute HOST1}}
+`kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-v3.yaml`{{execute HOST1}}
+`istioctl get virtualservices`{{execute HOST1}}
+
+https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage
+
+https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/dashboard/db/istio-mesh-dashboard
+
+https://[[HOST_SUBDOMAIN]]-16686-[[KATACODA_HOST]].environments.katacoda.com/
+
+https://[[HOST_SUBDOMAIN]]-8088-[[KATACODA_HOST]].environments.katacoda.com/dotviz
+
+Run the command to load the product page calls
+
+`while true; do
+  curl -s https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage > /dev/null
+  echo -n .;
+  sleep 0.2
+done`{{execute HOST1}}
+
+Run the command to load the product page calls from node
+`while true; do
+  curl -s https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage > /dev/null
+  echo -n .;
+  sleep 0.2
+done`{{execute HOST2}}
