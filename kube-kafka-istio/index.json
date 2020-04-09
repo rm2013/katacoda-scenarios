@@ -30,7 +30,8 @@
         "intro": {
             "text": "intro.md",
             "courseData": "courseBase.sh",
-            "credits": ""
+            "credits": "",
+	    "code":"launch.sh"
         },
         "finish": {
             "text": "finish.md"
