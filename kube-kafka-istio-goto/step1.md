@@ -19,5 +19,9 @@ kubeadm join 172.17.0.29:6443 --token 96771a.f608976060d16396 \
 Copy and run the recommended kubeadm command on Host2 to join it to the cluster. This step is needed before continuing on to the next step
 
 Run the following command to verify a master and a node exists
-`kubectl get nodes`{{execute HOST1}}
+`watch kubectl get nodes`{{execute HOST1}}
+
+Clear the command when the master and node both become ready
+`clear`{{execute interrupt HOST1}}
+
 

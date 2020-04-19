@@ -14,14 +14,12 @@ kind: Service
 metadata:
   name: kafka-producer-consumer
   namespace: testspace
+  labels:
+    app: kafka-producer-consumer
 spec:
   ports:
-    - name: tcp
-      nodePort: 31008
+    - name: http
       port: 8080
-      targetPort: 8080
-      protocol: TCP
-  type: NodePort
   selector:
     app: kafka-producer-consumer
 ---
@@ -32,25 +30,15 @@ metadata:
   namespace: testspace
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: kafka-producer-consumer
   template:
     metadata:
-      annotations:
       labels:
         app: kafka-producer-consumer
+        version: v1
     spec:
       containers:
-        - env:
-            - name: GRPC_PORT
-              value: "8080"
+        -  name: kafka-producer-consumer
           image: rmohammad/kafka-producer-consumer:5
-          name: kafka-producer-consumer
           ports:
             - containerPort: 8080
-              name: grpc
-          resources:
-            requests:
-              cpu: 100m
       serviceAccountName: kafka-producer-consumer
