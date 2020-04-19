@@ -18,7 +18,10 @@ Add istio to path
 `kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute HOST1}}
 
 Check the status of the pods
-`kubectl get pods -n istio-system`{{execute HOST1}}
+`watch kubectl get pods -n istio-system`{{execute HOST1}}
+
+Clear the command when the pods come up
+`clear`{{execute interrupt HOST1}}
 
 Extract the Host1 IP
 `export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')`{{execute HOST1}}
