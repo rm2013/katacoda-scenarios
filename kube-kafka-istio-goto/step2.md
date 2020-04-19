@@ -6,8 +6,10 @@ Install Istio
 Download  Istio 
 `curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.0.0 sh -`{{execute HOST1}}
 
-Add istio to path
-`export PATH="$PATH:/root/istio-1.0.0/bin"`{{execute HOST1}}
+Add istio to path and deploy istio modules
+`export PATH="$PATH:/root/istio-1.0.0/bin" && cd /root/istio-1.0.0 && \
+ kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml -n istio-system && \
+ kubectl apply -f install/kubernetes/istio-demo-auth.yaml  `{{execute HOST1}}
 
 `cd /root/istio-1.0.0`{{execute HOST1}}
 
