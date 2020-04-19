@@ -12,7 +12,11 @@ The command below will initialise the cluster with a known token to simplify the
 
 Wait until the command completes.
 
-Then run the recommended kubeadm command on Host2 to join it to the cluster. This step is needed before continuing on to the next step
+Locate the command in Host1 termal which looks like this
+kubeadm join 172.17.0.29:6443 --token 96771a.f608976060d16396 \
+    --discovery-token-ca-cert-hash sha256:1c89d475ab17af2867ddfe9ec2f50169186f9abb5f01fe6d9f545050fcf47d3e
+
+Copy and run the recommended kubeadm command on Host2 to join it to the cluster. This step is needed before continuing on to the next step
 
 Run the following command to verify a master and a node exists
 `kubectl get nodes`{{execute HOST1}}
