@@ -41,7 +41,7 @@
                        {"file": "210kafka-headless.yml", "target": "/opt"},
                        {"file": "220kafka-statefulset.yml", "target": "/opt"},
 		       {"file": "init.sh", "target": "/opt"},
-		       {"file": "kafka-producer-consumer.yml", "target": "/opt"}
+		       {"file": "kafka-producer-consumer.yml", "target": "/opt"},
 		       {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"}
 	            ]
         }
