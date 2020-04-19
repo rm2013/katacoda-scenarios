@@ -26,7 +26,9 @@ Clear the command when the pods come up
 `clear`{{execute interrupt HOST1}}
 
 Extract the Host1 IP
-`export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}')`{{execute HOST1}}
+`export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}') && \
+  sed -i -- 's/extip/'$EXT_IP'/g' /root/katacoda.yml && \
+  kubectl apply -f /root/katacoda.yml `{{execute HOST1}}
 
 Update the katacode service file with the external IP
 `sed -i -- 's/extip/'$EXT_IP'/g' /root/katacoda.yml`{{execute HOST1}}
