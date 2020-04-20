@@ -18,8 +18,12 @@ metadata:
     app: kafka-producer-consumer
 spec:
   ports:
-    - name: http
+    - name: tcp
+      nodePort: 31008
       port: 8080
+      targetPort: 8080
+      protocol: TCP
+  type: NodePort
   selector:
     app: kafka-producer-consumer
 ---
