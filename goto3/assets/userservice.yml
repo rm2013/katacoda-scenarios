@@ -45,7 +45,7 @@ spec:
         - env:
             - name: GRPC_PORT
               value: "9000"
-          image: rmohammad/userservice:1
+          image: rmohammad/userservice:4
           name: userservice
           ports:
             - containerPort: 9000

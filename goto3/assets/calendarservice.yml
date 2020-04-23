@@ -45,7 +45,7 @@ spec:
         - env:
             - name: GRPC_PORT
               value: "9001"
-          image: rmohammad/calendarservice:1
+          image: rmohammad/calendarservice:4
           name: calendarservice
           ports:
             - containerPort: 9001
