@@ -1,8 +1,8 @@
 {
-  "title": "Hello Kube and Kafka Scenario",
-  "description": "Your Kube Scenario with Kafka",
-  "difficulty": "beginner",
-  "time": "2 minutes",
+  "title": "Demo3 Kafka Scenario",
+  "description": "Your Kube Scenario with Kafka - Demo3",
+  "difficulty": "intermidiate",
+  "time": "30 minutes",
   "details": {
     "steps": [{
       "title": "Step 1 - Run Command",

@@ -1,1 +1,1 @@
-Welcome to your kube  Katacoda Scenario!
+Welcome to you  Katacoda Scenario for Demo 3!
