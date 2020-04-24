@@ -45,7 +45,7 @@ spec:
         - env:
             - name: GRPC_PORT
               value: "8080"
-          image: rmohammad/calendarapp:1
+          image: rmohammad/calendarapp:3
           name: calendarapp
           ports:
             - containerPort: 8080
