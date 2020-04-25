@@ -1,25 +1,10 @@
-# Katacoda Hello Kube
-This is an example kube  repository. Starting building your own scenario by editing the files in this directory. Create additional scenarios by adding additional directories to the top level folder.
+# Katacoda Demo3
 
+In this Demo we will install kafka in kubernetes environment with persistent volume. Then deploy the CalendarItems Application whihc is now broken up into three applications.
 
-## index.json
-The file _index.json_ contains all the information about the scenario. It has the title, description and a heading for each step.
+**Step1:** We will start with auto-installing kubernetes. We will then Validate the kubernetes is installed correctly.
 
-The file also contains an imageid. This refers to the Katacoda environment. Here are some environment image IDs you may find useful:
-
-| **Environment**  | **Image ID**  |
-|------------------|---------------|
-| Docker           | docker        |
-| Kubernetes       | kubernetes    |
-| CoreOS           | coreos        |
-| Node.js v6       | node6         |
-| Go               | go            |
-| C#               | c#            |
-| Java             | java8         |
-| Bash             | bash          |
-
-## Pro Author Accounts
-Interested in metrics, private repositories and environments for classroom teaching? Update to become a Pro Author at https://katacoda.com/teach
-
-## Interactive Developer Portals
-Want to take your scenarios to the next level? Visit https://katacoda.com/embed
+**Step2:** We will create storage class, persistant volume, zookeeper and kafka broker
+ 
+ Step3: We will deploy CalendarApp. The is now broken into three parts. First part is the microservice that manages users, whihc is userservice.
+        Second microservice is Calendarservice which handles all calendar item functionality. The third part is the static UI.
