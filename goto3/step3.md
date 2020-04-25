@@ -1,15 +1,15 @@
 ## CalendarItems Application Deplpoyment
 
-###Deploy Userservice microservice
-`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
+Deploy Userservice microservice
+`kubectl apply -f /opt/userservice.yml`{{execute}}
 
-###Deploy Calendarservice microservice
-`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
+Deploy Calendarservice microservice
+`kubectl apply -f /opt/calendarservice.yml`{{execute}}
 
-###Deploy CalendarApp UI
-`kubectl apply -f /opt/kafka-producer-consumer.yml`{{execute}}
+Deploy CalendarApp UI
+`kubectl apply -f /opt/calendarapp.yml`{{execute}}
 
-###Validate all pods are up and running
+Validate all pods are up and running
 `kubectl -ntestspace get po`{{execute}}
 
 ###Access CalendarApp UI
