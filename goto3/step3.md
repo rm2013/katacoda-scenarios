@@ -1,17 +1,22 @@
 ## CalendarItems Application Deplpoyment
 
+In this step we will deploy all the modules of the application in the testspace namespace
+
 #### Deploy Userservice microservice
 
-`kubectl apply -f /opt/userservice.yml`{{execute}}
+`kubectl apply -f app/userservice.yml`{{execute}}
 
 #### Deploy Calendarservice microservice
-`kubectl apply -f /opt/calendarservice.yml`{{execute}}
+`kubectl apply -f app/calendarservice.yml`{{execute}}
 
 Deploy CalendarApp UI
-`kubectl apply -f /opt/calendarapp.yml`{{execute}}
+`kubectl apply -f app/calendarapp.yml`{{execute}}
 
 Validate all pods are up and running
-`kubectl -ntestspace get po`{{execute}}
+`watch kubectl -ntestspace get po`{{execute}}
+
+Clear the command when the pods come up
+`clear`{{execute interrupt}}
 
 #### Access CalendarApp UI
 

@@ -6,7 +6,7 @@ In this Demo we will install kafka in kubernetes environment with persistent vol
 ## Step1:
 We will start with auto-installing kubernetes. We will then Validate the kubernetes is installed correctly.
 
-##Step2: 
+## Step2: 
 We will create storage class, persistant volume, zookeeper and kafka broker
  
 ## Step3:

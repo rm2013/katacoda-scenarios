@@ -2,19 +2,24 @@
 #Launch Kubernetes
 /usr/bin/launch.sh 
 
-cd /opt
+cd /root
 
 #Make dir for kafka data
-mkdir /opt/kafka
-mkdir /opt/kafka/data
+mkdir kafka
+mkdir kafka/data
 
 #Make dir for Persistence zookeeper and kafka deployments
-mkdir /opt/zkp
-mkdir /opt/kfk
-mkdir /opt/pv
+mkdir zkp
+mkdir kfk
+mkdir pv
+mkdir app
 
 
 #Copy respectives files into deployment dirs
-mv /opt/1* /opt/zkp
-mv /opt/2* /opt/kfk
-mv /opt/0* /opt/pv
+mv /opt/0* pv
+mv /opt/1* zkp
+mv /opt/2* kfk
+mv /opt/userservice.yml app
+mv /opt/calendarservice.yml app
+mv /opt/calendarapp.yml app
+
