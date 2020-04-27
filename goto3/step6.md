@@ -1,6 +1,6 @@
 ## Starting a docker container with kafka
 
-Let us now spinup a base docker container with kafka client
+Let us now spin up a base docker container with kafka client
 
 #### Deploy Kafka Client pod
 Using the deployment file deploy the kafkaclient
