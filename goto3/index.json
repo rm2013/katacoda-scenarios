@@ -9,12 +9,24 @@
       "text": "step1.md"
     },
       {
-        "title": "Step 2 - Install and Validate Kafka Elements",
+        "title": "Step 2 - Review Kafka deployment files",
         "text": "step2.md"
       },
       {
-        "title": "Step 3 - Deploy CalendarItems Application",
+        "title": "Step 3 - Install and Validate Kafka Elements",
         "text": "step3.md"
+      },
+      {
+        "title": "Step 4 - Deploy CalendarItems Application",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5 - Test Run with CalendarItems Application",
+        "text": "step5.md"
+      },
+      {
+        "title": "Step 6 - Inspect kafka topics",
+        "text": "step6.md"
       }],
     "intro": {
       "code": "init.sh",
