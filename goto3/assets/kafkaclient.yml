@@ -18,7 +18,7 @@ spec:
         - env:
             - name: GRPC_PORT
               value: "9012"
-          image: rmohammad/kafkaclient:4
+          image: rmohammad/kafka-client:4
           name: kafkaclient
           ports:
             - containerPort: 9012

@@ -4,7 +4,7 @@ We will review all the elements of kafka eco system in kubernetes
 
 
 #### Storageclass and Persistent volume
-Locate /root/pv/000storageclass.yml file
+Locate /root/pv/000storageclass.yml file.
 Please note the reclaimPolicy, it is set as Retain. 
 This means that data will be retained, it can also set as Delete. This is used by the Persistent volume.
 Lets now locate /root/pv/010pv-volume.yml, this defines the persistent volume based on the storage class.

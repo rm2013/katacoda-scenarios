@@ -2,18 +2,18 @@
 
 Let us now spinup a base docker container with kafka client
 
-#### Deploy Userservice microservice
-
-`kubectl apply -f kafkaclient.yml`{{execute}}
+#### Deploy Kafka Client pod
+Using the deployment file deploy the kafkaclient
+`kubectl apply -f /opt/kafkaclient.yml`{{execute}}
 
 #### Check to see of the kafkaclient is up
-Wait until the po is up
-`wait kubectl -ntestspace get po`{{execute}}
+Wait until the pod is up
+`watch kubectl -ntestspace get po`{{execute}}
 
 Clear the command when the pods come up
 `clear`{{execute interrupt}}
 
-### Exec intot the kafkaclient pod
+### Exec into the kafkaclient pod
 
 `kubectl -ntestspace exec -it $(kubectl -ntestspace get po --no-headers -o custom-columns=":metadata.name" | grep kafkaclient) bash`{{execute}}
 

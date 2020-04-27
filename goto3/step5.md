@@ -21,11 +21,11 @@ CalendarService URL: https://[[HOST_SUBDOMAIN]]-31009-[[KATACODA_HOST]].environm
 Userservice URL: https://[[HOST_SUBDOMAIN]]-31010-[[KATACODA_HOST]].environments.katacoda.com
 
 #### Signup a user
-Using the UI select Signup and signup as a user
+1. Using the UI select Signup and signup as a user
 
-Login as  a user
+2. Login as  a user
 
-Add some events
+3. Add some events
 
 
 
