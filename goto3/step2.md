@@ -1,34 +1,34 @@
-## Kafka deployment
+## Review Kafka deployment files 
 
-We will deploy Kafka elements using the apply option
+We will review all the elements of kafka eco system in kubernetes 
 
-#### Deploy storageclass and persistent volume
-This command will deploy all yaml files in the /opt/pv folder. 
 
-`kubectl apply -f pv`{{execute}}
+#### Storageclass and Persistent volume
+Locate /root/pv/000storageclass.yml file
+Please note the reclaimPolicy, it is set as Retain. 
+This means that data will be retained, it can also set as Delete. This is used by the Persistent volume.
+Lets now locate /root/pv/010pv-volume.yml, this defines the persistent volume based on the storage class.
+As you can see this is usual the storageclass which was cereated earlier.
  
-#### Deploy zookeeper 
-This command will deploy zookeeper service and pods
+#### Review zookeeper elements 
+Locate /root/zkp/100zookeeper.yml
+This defines a kubernetes service for zookeeper so that other services can access the zookeeper pods. 
 
-`kubectl apply -f zkp`{{execute}}
+Locate /root/zkp/110zookeeper-headless.yml
+This headless service manages the statefulset
 
-Wait for the zookeeper pod to come up
+Locate  /root/zkp/110zookeeper-statefulset.yml
+This defines the actual zookeeper pods, which are stateful, it uses the headless service to manage these pods
 
-`watch kubectl -ntestspace get po`{{execute}}
+Locate /root/zkp/110zookeeper-disruptionbudget.yml
+This defines the disruption that we can tolerate
 
-Clear the command when the pods come up
-`clear`{{execute interrupt}}
+#### Review Kafka Elements
+Locate /root/kfk/200kafka.yml
+This defines a kubernetes service for kafka so that other services can access the kafka broker on port 9092 
 
-#### Deploy kafka 
-This command will deploy kafka broker and service
+Locate /root/kfk/210kafka-headless.yml
+This headless service manages the statefulset
 
-`kubectl apply -f kfk`{{execute}}
-
-Wait for  the kafka pod to come up
-
-`watch kubectl -ntestspace get po`{{execute}}
-
-Clear the command when the pods come up
-`clear`{{execute interrupt}}
-
-
+Locate  /root/zkp/220kafka-statefulset.yml
+This defines the actual kafka pods, which are stateful, it uses the headless service to manage these pods

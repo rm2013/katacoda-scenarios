@@ -1,19 +1,3 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: userservice
-  namespace: testspace
-spec:
-  ports:
-    - name: tcp
-      nodePort: 31010
-      port: 9000
-      targetPort: 9000
-      protocol: TCP
-  type: NodePort
-  selector:
-    app: userservice
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,11 +17,11 @@ spec:
       containers:
         - env:
             - name: GRPC_PORT
-              value: "9000"
-          image: rmohammad/userservice:4
+              value: "9012"
+          image: rmohammad/kafkaclient:4
           name: userservice
           ports:
-            - containerPort: 9000
+            - containerPort: 9012
               name: grpc
           resources:
             requests:

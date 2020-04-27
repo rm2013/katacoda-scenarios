@@ -1,36 +1,38 @@
-## CalendarItems Application Deplpoyment
+## Kafka deployment
 
-In this step we will deploy all the modules of the application in the testspace namespace
+Now that we have reviewed the definition files, 
+We will deploy these elements using the create option of kubectl. 
+As seen in the previous step the files in each folder are numbered in a sequence.
+The reason being the create command create each element in the order, and yes order is important.
 
-#### Deploy Userservice microservice
+#### Deploy storageclass and persistent volume
+This command will deploy all yaml files in the pv folder. 
 
-`kubectl apply -f app/userservice.yml`{{execute}}
+`kubectl create -f pv`{{execute}}
+ 
+#### Deploy zookeeper 
+This command will deploy zookeeper service and pods
 
-#### Deploy Calendarservice microservice
-`kubectl apply -f app/calendarservice.yml`{{execute}}
+`kubectl create -f zkp`{{execute}}
 
-Deploy CalendarApp UI
-`kubectl apply -f app/calendarapp.yml`{{execute}}
+Wait for the zookeeper pod to come up, this is needed before we move on to deploying the kafka
 
-Validate all pods are up and running
 `watch kubectl -ntestspace get po`{{execute}}
 
 Clear the command when the pods come up
 `clear`{{execute interrupt}}
 
-#### Access CalendarApp UI
+#### Deploy kafka 
+This command will deploy kafka broker and services
 
-https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com
+`kubectl create -f kfk`{{execute}}
 
-#### Change settings in CalendarApp to point to Calendarservice and Userservice
-Select settings and set the CalendarService and Userservice links as listed below
+Wait for  the kafka pod to come up
 
-CalendarService URL: https://[[HOST_SUBDOMAIN]]-31009-[[KATACODA_HOST]].environments.katacoda.com
+`watch kubectl -ntestspace get po`{{execute}}
 
-Userservice URL: https://[[HOST_SUBDOMAIN]]-31010-[[KATACODA_HOST]].environments.katacoda.com
-
-
-
+Clear the command when the pods come up
+`clear`{{execute interrupt}}
 
 
-
+Now that we see all the pods are up for both zookeeper and kafka we can proceed to deploy the application next.
