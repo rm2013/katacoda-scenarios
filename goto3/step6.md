@@ -1,35 +1,29 @@
-## CalendarItems Application Deplpoyment
+## Starting a docker container with kafka
 
-In this step we will deploy all the modules of the application in the testspace namespace
+Let us now spinup a base docker container with kafka client
 
 #### Deploy Userservice microservice
 
-`kubectl apply -f app/userservice.yml`{{execute}}
+`kubectl apply -f kafkaclient.yml`{{execute}}
 
-#### Deploy Calendarservice microservice
-`kubectl apply -f app/calendarservice.yml`{{execute}}
-
-Deploy CalendarApp UI
-`kubectl apply -f app/calendarapp.yml`{{execute}}
-
-Validate all pods are up and running
-`watch kubectl -ntestspace get po`{{execute}}
+#### Check to see of the kafkaclient is up
+Wait until the po is up
+`wait kubectl -ntestspace get po`{{execute}}
 
 Clear the command when the pods come up
 `clear`{{execute interrupt}}
 
-#### Access CalendarApp UI
+### Exec intot the kafkaclient pod
 
-https://[[HOST_SUBDOMAIN]]-31008-[[KATACODA_HOST]].environments.katacoda.com
+`kubectl -ntestspace exec -it $(kubectl -ntestspace get po --no-headers -o custom-columns=":metadata.name" | grep kafkaclient) bash`{{execute}}
 
-#### Change settings in CalendarApp to point to Calendarservice and Userservice
-Select settings and set the CalendarService and Userservice links as listed below
+### Run kafka topics to list the topics
+Change to kafka directory
+`cd kafka_2.13-2.5.0`{{execute}}
+Run kafka topics command
+`bin/kafka-topics.sh --list --zookeeper zookeeper:2181`{{execute}}
 
-CalendarService URL: https://[[HOST_SUBDOMAIN]]-31009-[[KATACODA_HOST]].environments.katacoda.com
-
-Userservice URL: https://[[HOST_SUBDOMAIN]]-31010-[[KATACODA_HOST]].environments.katacoda.com
-
-
+This validates that CalendarApp has created the topic and sharing messages from it.
 
 
 
