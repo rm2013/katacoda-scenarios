@@ -3,7 +3,8 @@
 We will review all the elements of kafka eco system in kubernetes 
 
 
-### Storageclass and Persistent volume
+### Review Storageclass and Persistent volume
+
 #### Locate /root/pv/000storageclass.yml file.
 Please note the reclaimPolicy, it is set as Retain. 
 This means that data will be retained, it can also set as Delete. This is used by the Persistent volume.
@@ -13,6 +14,7 @@ This defines the persistent volume based on the storage class.
 As you can see this is usual the storageclass which was created earlier.
  
 ### Review zookeeper elements 
+
 #### Locate /root/zkp/100zookeeper.yml
 This defines a kubernetes service for zookeeper so that other services can access the zookeeper pods. 
 
@@ -26,6 +28,7 @@ This defines the actual zookeeper pods, which are stateful, it uses the headless
 This defines the disruption that we can tolerate
 
 ### Review Kafka Elements
+
 #### Locate /root/kfk/200kafka.yml
 This defines a kubernetes service for kafka so that other services can access the kafka broker on port 9092 
 
@@ -34,3 +37,5 @@ This headless service manages the statefulset
 
 #### Locate  /root/zkp/220kafka-statefulset.yml
 This defines the actual kafka pods, which are stateful, it uses the headless service to manage these pods
+
+In the next steop we will deploy these.
