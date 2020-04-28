@@ -22,10 +22,10 @@ This defines a kubernetes service for zookeeper so that other services can acces
 #### Locate /root/zkp/110zookeeper-headless.yml
 This headless service manages the statefulset
 
-#### Locate  /root/zkp/110zookeeper-statefulset.yml
+#### Locate  /root/zkp/120zookeeper-statefulset.yml
 This defines the actual zookeeper pods, which are stateful, it uses the headless service to manage these pods
 
-#### Locate /root/zkp/110zookeeper-disruptionbudget.yml
+#### Locate /root/zkp/130zookeeper-disruptionbudget.yml
 This defines the disruption that can be tolerated
 
 ### Review Kafka Elements
