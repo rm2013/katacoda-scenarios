@@ -1,12 +1,13 @@
 ## Review Kafka deployment files 
 
-We will review all the elements of kafka eco system in kubernetes 
+In this step we will review all the elements of kafka eco system in kubernetes.
+ There is lot going on here. In general a yml file is used to define and deploy kubernetes elements. 
 
 
 ### Review Storageclass and Persistent volume
 
-#### Locate /root/pv/000storageclass.yml file.
-Please note the reclaimPolicy, it is set as Retain. 
+#### Locate /root/pv/000storageclass.yml
+Please note the reclaimPolicy, which is set as Retain. 
 This means that data will be retained, it can also set as Delete. This is used by the Persistent volume.
 
 #### Locate /root/pv/010pv-volume.yml 
