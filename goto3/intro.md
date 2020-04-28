@@ -26,4 +26,4 @@ We will then signup a user, login as the user and add some events
 
 ## Step6:
 We will spin up a kafka client pod. 
-We will get into the kafka client pod and look into the topics and review the topic contents
+We will get into the kafka client pod and validate that the claendar-items topic is created

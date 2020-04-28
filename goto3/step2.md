@@ -26,7 +26,7 @@ This headless service manages the statefulset
 This defines the actual zookeeper pods, which are stateful, it uses the headless service to manage these pods
 
 #### Locate /root/zkp/110zookeeper-disruptionbudget.yml
-This defines the disruption that we can tolerate
+This defines the disruption that can be tolerated
 
 ### Review Kafka Elements
 
