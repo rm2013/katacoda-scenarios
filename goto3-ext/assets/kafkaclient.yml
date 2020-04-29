@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafkaclient
+  namespace: testspace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafkaclient
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: kafkaclient
+    spec:
+      containers:
+        - env:
+            - name: GRPC_PORT
+              value: "9012"
+          image: rmohammad/kafka-client:4
+          name: kafkaclient
+          ports:
+            - containerPort: 9012
+              name: grpc
+          resources:
+            requests:
+              cpu: 100m

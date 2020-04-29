@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: calendarservice
+  namespace: testspace
+spec:
+  ports:
+    - name: tcp
+      nodePort: 31009
+      port: 9001
+      targetPort: 9001
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: calendarservice
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calendarservice
+  namespace: testspace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calendarservice
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: calendarservice
+    spec:
+      containers:
+        - env:
+            - name: GRPC_PORT
+              value: "9001"
+          image: rmohammad/calendarservice:4
+          name: calendarservice
+          ports:
+            - containerPort: 9001
+              name: grpc
+          resources:
+            requests:
+              cpu: 100m
