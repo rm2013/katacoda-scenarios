@@ -17,6 +17,22 @@
             {
                 "title": "Step 3 - Deploy Kafka",
                 "text": "step3.md"
+            },
+            {
+              "title": "Step 4 - Deploy Kafka",
+              "text": "step4.md"
+            },
+            {
+              "title": "Step 5 - Deploy Kafka",
+              "text": "step5.md"
+            },
+            {
+              "title": "Step 6 - Deploy Kafka",
+              "text": "step6.md"
+            },
+            {
+              "title": "Step 7 - Deploy Kafka",
+              "text": "step7.md"
             }
         ],
         "intro": {
