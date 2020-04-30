@@ -1,5 +1,7 @@
 ## Deplot kafka elements
 
+Copy kafka definition files
+` chmod +x /opt/init.sh && /opt/init.sh`{{execute}}
 
 Create a namespace and deploy Persistant Volume and Zookeepers
 `kubectl create namespace testspace && \
