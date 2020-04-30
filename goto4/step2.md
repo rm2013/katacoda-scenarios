@@ -6,22 +6,12 @@ Download the istio version 1.0.0
 
 `curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.0.0 sh -`{{execute HOST1}}
 
+### Deploy istio 
 Add istio to path and deploy istio modules
 `export PATH="$PATH:/root/istio-1.0.0/bin" && cd /root/istio-1.0.0 && \
  kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml -n istio-system && \
  kubectl apply -f install/kubernetes/istio-demo-auth.yaml  `{{execute HOST1}}
 
-### Deploy istio 
-
-Change into the istio directory
-`cd /root/istio-1.0.0`{{execute HOST1}}
-
-Deploy istio Custom Resource Definitions in kubernetes
-
-`kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml -n istio-system`{{execute HOST1}}
-
-Deploy the demo auth of istio, istio comes comes with other auth models, but we will focus on the demo-auth
-`kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute HOST1}}
 
 Check the status of the istio pods in the istio-system
 `watch kubectl get pods -n istio-system`{{execute HOST1}}
@@ -31,14 +21,8 @@ Clear the command when the pods come up
 
 Extract the Host1 IP
 `export EXT_IP=$(hostname -I |  head -n1 | awk '{print $1;}') && \
-  sed -i -- 's/extip/'$EXT_IP'/g' /root/katacoda.yml && \
-  kubectl apply -f /root/katacoda.yml `{{execute HOST1}}
-
-Update the katacode service file with the external IP
-`sed -i -- 's/extip/'$EXT_IP'/g' /opt/istio-services.yml`{{execute HOST1}}
-
-
-`kubectl apply -f /opt/istio-services.yml`{{execute HOST1}}
+  sed -i -- 's/extip/'$EXT_IP'/g' /opt/istio-services.yml && \
+  kubectl apply -f /opt/istio-services.yml `{{execute HOST1}}
 
 Enable istio-injection for the default namespace
 
