@@ -1,4 +1,4 @@
-# Welcome to Katacoda Scenario for Demo 3!
+# Welcome to Katacoda Scenario for Demo 3 Ext!
 
 
 In this Demo we will install kafka in kubernetes environment with persistent volume. 

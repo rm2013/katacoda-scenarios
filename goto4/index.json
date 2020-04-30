@@ -1,0 +1,60 @@
+{
+    "pathwayTitle": "Demo 4 - Kube Cluster, with Kafka and Istio, and multiple versions of Calendar App",
+    "title": "Getting Deeper with Kube Cluster, Kafka, Istio, and multiple versions of Calendar App",
+    "description": "Learn how to deploy a Kube cluster, Kafka, Istio  and multiple versions of Calendar App",
+    "difficulty": "intermediate",
+    "time": "45 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Step 1 - Initialise Master",
+                "text": "step1.md"
+            },
+            {
+                "title": "Step 2 - Install Istio",
+                "text": "step2.md"
+            },
+            {
+                "title": "Step 3 - Deploy Kafka",
+                "text": "step3.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "courseData": "courseBase.sh",
+            "credits": ""
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+          "host01": [
+                      {"file": "dashboard.yaml", "target": "/root"},
+                      {"file": "katacoda.yml", "target": "/root"},
+                      {"file": "000storageclass.yml", "target": "/opt"},
+                      {"file": "010pv-volume.yml", "target": "/opt"},
+                      {"file": "100zookeeper.yml", "target": "/opt"},
+                      {"file": "110zookeeper-headless.yml", "target": "/opt"},
+                      {"file": "120zookeeper-statefulset.yml", "target": "/opt"},
+                      {"file": "130zookeeper-disruptionbudget.yml", "target": "/opt"},
+                      {"file": "200kafka.yml", "target": "/opt"},
+                      {"file": "210kafka-headless.yml", "target": "/opt"},
+                      {"file": "220kafka-statefulset.yml", "target": "/opt"},
+                      {"file": "init.sh", "target": "/opt"},
+                      {"file": "istio-services.yml", "target": "/opt"},
+                      {"file": "calendarapp.yml", "target": "/opt"},
+                      {"file": "calendarservice_v2.yml", "target": "/opt"},
+                      {"file": "userservice.yml", "target": "/opt"},
+                      {"file": "kafka-producer-consumer.yml", "target": "/opt"},
+		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"}
+	            ]
+        }
+    },
+    "environment": {
+        "uilayout": "terminal-terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+    },
+    "backend": {
+      "imageid": "kubernetes-cluster"
+    }
+}
