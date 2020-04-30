@@ -17,19 +17,22 @@ Then we will validate that the master and nodes are ready.
 We will download and install istio
 
 ## Step3: 
+We will deploy bookinfo example
+
+## Step4: 
 We will kafka elements
  
-## Step4:
+## Step5:
 We will deploy CalendarApp which includes 2 versions of calendarservice
 
-## Step5:
+## Step6:
 We will launch the application and 
 adjust the settings in the application to point to Userservice and Calendarservice. 
 We will then sign up a user, login as the user and add some events  
 
-## Step6:
+## Step7:
 We will setup Selective roll out
 
-## Step7:
+## Step8:
 We will validate user's experiencing changes with header values
 

@@ -1,18 +1,25 @@
-## Deploy elements of Calendar App
+## Deplot kafka elements
 
-We will deploy CalendarApp which includes 2 versions of calendarservice
+Copy kafka definition files
+` chmod +x /opt/init.sh && /opt/init.sh`{{execute}}
 
-Deploy userservice on port 31010
-`kubectl create -f userservice.yml`{{execute}}
+Create a namespace and deploy Persistant Volume and Zookeepers
+`kubectl create namespace testspace && \
+ kubectl create -f pv && \
+ kubectl create -f zkp`{{execute}}
 
-Deploy calendarservice v1 on port 31009
-`kubectl create -f calendarservice.yml`{{execute}}
+Wait for the pods to come up
+`watch kubectl -ntestspace get po`{{execute HOST1}}
 
-Deploy calendarservice v2 on port 31011
-`kubectl create -f calendarservice_v2.yml`{{execute}}
+Clear the command when the pods come up
+`clear`{{execute interrupt HOST1}}
 
-Deploy calendarapp on poert 31008
-`kubectl create -f calendarapp.yml`{{execute}}
+Deploy kafka broker
+`kubectl create -f kfk`{{execute}}
 
-In the next step we will validate the deployment of the services. 
+Wait for the kafka-producer-consumer pod to come up
+`watch kubectl -ntestspace get po`{{execute HOST1}}
+
+Clear the command when the pods come up
+`clear`{{execute interrupt HOST1}}
 

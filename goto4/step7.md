@@ -1,21 +1,7 @@
-## Validate user's experiencing changes with header values
+## Setup Selective roll out 
 
-### Create preferred user
+### Define a istio virtual service for calendarservice
 
-### Add user info in the headers
+### Deploy virtual service
 
-### User experience change
-
-1. Login as the signed up user
-
-2. Select Home
-
-3. Add an event, by entering some text and hitting enter
-
-3. Click on the checkbox next to the event that got created in the list
-
-4. An error should show up
-
-5. Add a header to the browser calls 
-
-6. 
+### Change the settings for virtual service in Calendar App

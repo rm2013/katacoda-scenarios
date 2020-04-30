@@ -14,23 +14,27 @@
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Deploy Kafka",
+                "title": "Step 3 - Install BookInfo example",
                 "text": "step3.md"
             },
             {
               "title": "Step 4 - Deploy Kafka",
-              "text": "step4.md"
+              "text": "step3.md"
             },
             {
               "title": "Step 5 - Deploy Kafka",
-              "text": "step5.md"
+              "text": "step4.md"
             },
             {
               "title": "Step 6 - Deploy Kafka",
-              "text": "step6.md"
+              "text": "step5.md"
             },
             {
               "title": "Step 7 - Deploy Kafka",
+              "text": "step6.md"
+            },
+            {
+              "title": "Step 8 - Deploy Kafka",
               "text": "step7.md"
             }
         ],
@@ -56,6 +60,7 @@
                       {"file": "init.sh", "target": "/opt"},
                       {"file": "istio-services.yml", "target": "/opt"},
                       {"file": "calendarapp.yml", "target": "/opt"},
+                      {"file": "calendarservice_v1.yml", "target": "/opt"},
                       {"file": "calendarservice_v2.yml", "target": "/opt"},
                       {"file": "userservice.yml", "target": "/opt"},
                       {"file": "kafka-producer-consumer.yml", "target": "/opt"},
