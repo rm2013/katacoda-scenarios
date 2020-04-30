@@ -28,7 +28,7 @@ spec:
         version: v1
     spec:
       containers:
-        name: calendarapp-m
+      - name: calendarapp-m
         image: rmohammad/calendarapp:3
         imagePullPolicy: IfNotPresent
         ports:
