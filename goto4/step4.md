@@ -1,5 +1,7 @@
 ## Deploy elements of Calendar App
 
+We will deploy CalendarApp which includes 2 versions of calendarservice
+
 Deploy userservice on port 31010
 `kubectl create -f userservice.yml`{{execute}}
 
