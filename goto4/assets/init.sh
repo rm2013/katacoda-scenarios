@@ -22,9 +22,9 @@ mv /opt/calendarservice_v1.yml app
 mv /opt/calendarservice_v2.yml app
 mv /opt/calendarapp.yml app
 
-mv /opt/calenderapp-m.yml app-m
-mv /opt/calenderapp-m-gateway.yml app-m
-mv /opt/calenderservice-m.yml app-m
-mv /opt/virtual-service-calenderservice-m.yml app-m
+mv /opt/calendarapp-m.yml app-m
+mv /opt/calendarapp-m-gateway.yml app-m
+mv /opt/calendarservice-m.yml app-m
+mv /opt/virtual-service-calendarservice-m.yml app-m
 mv /opt/userservice-m.yml app-m
 mv /opt/destination-rule-all-mtls.yml app-m
