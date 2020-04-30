@@ -16,6 +16,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: calendarservice-m
+  namespace: testspace
 spec:
   host: calendarservice-m
   trafficPolicy:
@@ -33,6 +34,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: userservice-m
+  namespace: testspace
 spec:
   host: userservice-m
   trafficPolicy:
