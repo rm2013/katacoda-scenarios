@@ -1,4 +1,4 @@
-## Setup Selective roll out 
+ 
 
 ### Define a istio virtual service for calendarservice
 

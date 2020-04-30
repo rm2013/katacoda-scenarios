@@ -1,4 +1,4 @@
-## Validate Calendar App deployment
+
 
 We will validate calendarapp is working with connection to calendarservice v1 and userservice. 
 The behavior of the application should be similar to what is seen in Demo3. 

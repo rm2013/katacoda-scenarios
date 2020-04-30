@@ -1,4 +1,4 @@
-## Deplot kafka elements
+
 
 Copy kafka definition files
 ` chmod +x /opt/init.sh && /opt/init.sh`{{execute}}

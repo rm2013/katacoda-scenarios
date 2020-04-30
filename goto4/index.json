@@ -6,35 +6,35 @@
     "details": {
         "steps": [
             {
-                "title": "Step 1 - Initialise Master",
+                "title": "Step 1 - Kubernetes Deployment",
                 "text": "step1.md"
             },
             {
-                "title": "Step 2 - Install Istio",
+                "title": "Step 2 - Install istio",
                 "text": "step2.md"
             },
             {
-                "title": "Step 3 - Install BookInfo example",
+                "title": "Step 3 - Setup BookInfo example and validate isto elements",
                 "text": "step3.md"
             },
             {
-              "title": "Step 4 - Deploy Kafka",
+              "title": "Step 4 - Deplot kafka elements",
               "text": "step4.md"
             },
             {
-              "title": "Step 5 - Deploy Kafka",
+              "title": "Step 5 - Deploy elements of Calendar App",
               "text": "step5.md"
             },
             {
-              "title": "Step 6 - Deploy Kafka",
+              "title": "Step 6 - Validate Calendar App deployment",
               "text": "step6.md"
             },
             {
-              "title": "Step 7 - Deploy Kafka",
+              "title": "Step 7 - Setup Selective roll out",
               "text": "step7.md"
             },
             {
-              "title": "Step 8 - Deploy Kafka",
+              "title": "Step 8 - Changing user's experience by changing header values",
               "text": "step8.md"
             }
         ],

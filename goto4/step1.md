@@ -1,4 +1,4 @@
-## Kubernetes Deployment
+
 
 The first stage of initialising the cluster is to launch the master node. 
 The master is responsible for running the control plane components, etcd and the API server. 

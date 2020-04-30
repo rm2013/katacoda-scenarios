@@ -1,10 +1,6 @@
-## Validate user's experiencing changes with header values
 
-### Create preferred user
 
-### Add user info in the headers
 
-### User experience change
 
 1. Sign up as a new user with username "beta_user"
 
