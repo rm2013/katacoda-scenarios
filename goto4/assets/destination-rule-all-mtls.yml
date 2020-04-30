@@ -1,9 +1,9 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: calendarapp
+  name: calendarapp-m
 spec:
-  host: calendarapp
+  host: calendarapp-m
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
@@ -15,9 +15,9 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: calendarservice
+  name: calendarservice-m
 spec:
-  host: reviews
+  host: calendarservice-m
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
@@ -32,9 +32,9 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: userservice
+  name: userservice-m
 spec:
-  host: ratings
+  host: userservice-m
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
