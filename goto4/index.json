@@ -63,6 +63,12 @@
                       {"file": "calendarservice_v1.yml", "target": "/opt"},
                       {"file": "calendarservice_v2.yml", "target": "/opt"},
                       {"file": "userservice.yml", "target": "/opt"},
+                      {"file": "calendarapp-m-gateway.yml", "target": "/opt"},
+                      {"file": "calendarapp-m.yml", "target": "/opt"},
+                      {"file": "calendarservice-m.yml", "target": "/opt"},
+                      {"file": "destination-rule-all-mtls.yml", "target": "/opt"},
+                      {"file": "virtual-service-calendarservice-m-v1-v2.yml", "target": "/opt"},
+                      {"file": "userservice-m.yml", "target": "/opt"},
                       {"file": "kafka-producer-consumer.yml", "target": "/opt"},
 		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"}
 	            ]

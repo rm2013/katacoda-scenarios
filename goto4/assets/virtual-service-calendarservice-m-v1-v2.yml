@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: calendarservice-m
+spec:
+  hosts:
+    - calendarservice-m
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: beta-user
+    route:
+    - destination:
+        host: calendarservice-m
+        subset: v2
+  - route:
+    - destination:
+        host: calendarservice-m
+        subset: v1

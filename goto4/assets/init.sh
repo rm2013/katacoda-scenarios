@@ -10,6 +10,7 @@ mkdir zkp
 mkdir kfk
 mkdir pv
 mkdir app
+mkdir app-m
 
 
 #Copy respectives files into deployment dirs
@@ -20,3 +21,10 @@ mv /opt/userservice.yml app
 mv /opt/calendarservice_v1.yml app
 mv /opt/calendarservice_v2.yml app
 mv /opt/calendarapp.yml app
+
+mv /opt/calenderapp-m.yml app-m
+mv /opt/calenderapp-m-gateway.yml app-m
+mv /opt/calenderservice-m.yml app-m
+mv /opt/virtual-service-calenderservice-m.yml app-m
+mv /opt/userservice-m.yml app-m
+mv /opt/destination-rule-all-mtls.yml app-m
