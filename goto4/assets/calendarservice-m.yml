@@ -29,7 +29,7 @@ spec:
         version: v1
     spec:
       containers:
-        name: calendarapp-m
+      - name: calendarapp-m-v1
         image: rmohammad/calendarservice:4
         imagePullPolicy: IfNotPresent
         ports:
@@ -39,6 +39,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: calendarservice-m-v2
+  namespace: testspace
 spec:
   replicas: 1
   template:
@@ -48,9 +49,9 @@ spec:
         version: v2
     spec:
       containers:
-        - name: reviews
-          image: rmohammad/calendarservice_v2:3
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 9001
+      - name: calendarservice-m-v2
+        image: rmohammad/calendarservice_v2:3
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9001
 ---

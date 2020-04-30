@@ -29,7 +29,7 @@ spec:
         version: v1
     spec:
       containers:
-        name: userservice-m
+      - name: userservice-m
         image: rmohammad/userservice:4
         imagePullPolicy: IfNotPresent
         ports:

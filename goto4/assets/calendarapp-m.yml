@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: calendarapp-m
-        image: rmohammad/calendarapp:3
+        image: rmohammad/calendarapp:4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
