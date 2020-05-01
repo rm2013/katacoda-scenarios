@@ -74,7 +74,7 @@
                       {"file": "virtual-service-calendarservice-m-v1-v2.yml", "target": "/opt"},
                       {"file": "userservice-m.yml", "target": "/opt"},
                       {"file": "helloworld.yaml", "target": "/opt"},
-                      {"file": "calendara.yml", "target": "/opt"},
+                      {"file": "calendara.yaml", "target": "/opt"},
                       {"file": "kafka-producer-consumer.yml", "target": "/opt"},
 		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"}
 	            ]
