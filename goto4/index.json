@@ -73,7 +73,7 @@
                       {"file": "destination-rule-all-mtls.yml", "target": "/opt"},
                       {"file": "virtual-service-calendarservice-m-v1-v2.yml", "target": "/opt"},
                       {"file": "userservice-m.yml", "target": "/opt"},
-                      {"file": "helloworld.yml", "target": "/opt"},
+                      {"file": "helloworld.yaml", "target": "/opt"},
                       {"file": "calendara.yml", "target": "/opt"},
                       {"file": "kafka-producer-consumer.yml", "target": "/opt"},
 		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"}
