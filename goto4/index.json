@@ -64,6 +64,7 @@
                       {"file": "calendarservice_v2.yml", "target": "/opt"},
                       {"file": "userservice.yml", "target": "/opt"},
                       {"file": "calendarapp-m-gateway.yml", "target": "/opt"},
+                      {"file": "calendarapp-m2-gateway.yml", "target": "/opt"},
                       {"file": "calendarapp-m.yml", "target": "/opt"},
                       {"file": "calendarapp-m2.yml", "target": "/opt"},
                       {"file": "calendarservice-m.yml", "target": "/opt"},
