@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: calendarapp-m
+  namespace: testspace
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: calendarapp-m
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: calendarapp-m-v1
+  namespace: testspace
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: calendarapp-m
+        version: v1
+    spec:
+      containers:
+      - name: calendarapp-m
+        image: rmohammad/calendarapp:4
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080

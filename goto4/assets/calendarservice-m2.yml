@@ -5,12 +5,8 @@ metadata:
   namespace: testspace
 spec:
   ports:
-    - name: tcp
-      nodePort: 31013
-      port: 9001
-      targetPort: 9001
-      protocol: TCP
-  type: NodePort
+  - port: 9001
+      name: http
   selector:
     app: calendarservice-m
 ---
