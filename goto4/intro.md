@@ -31,7 +31,7 @@ adjust the settings in the application to point to Userservice and Calendarservi
 We will then sign up a user, login as the user and add some events  
 
 ## Step7:
-We will setup Selective roll out
+Validate the fix to the Calendar App
 
 ## Step8:
 We will validate user's experiencing changes with header values
