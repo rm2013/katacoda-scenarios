@@ -8,15 +8,20 @@ Deploy bookinfo example
 `kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookinfo.yaml) &&\
  kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml && \
  kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml && \
- kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml && \
  kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml && \
- kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-v3.yaml && \
  istioctl get virtualservices`{{execute HOST1}}
+
+In the previous command we have setup the traffic routing as 50% between two versions of reviews service.
+Lets look into this setup little closely.
+`cat samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml`{{execute HOST1}}
+In the route section the destination is divided equally between v1 and v3. This can be seen when we access
+the productpage multiple times. 
 
 Product page can be accessed at the link below
 https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage
+ 
 
-Grafana can be accessed at the link below
+Grafana provides an insight into the load occurring on the system. Grafana can be accessed at the link below
 https://[[HOST_SUBDOMAIN]]-3000-[[KATACODA_HOST]].environments.katacoda.com/dashboard/db/istio-mesh-dashboard
 
 Service graph showing the request path can be visialized at the link below

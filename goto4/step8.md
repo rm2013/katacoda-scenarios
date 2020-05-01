@@ -1,23 +1,27 @@
 
 
+Let's go back to the Bookinfo application, where we have equally distribution of the traffic
+ between version 1 and version 3. Now we will see how to distribute the traffic based on the user
+  and route it between version 2 and version 3 
+ 
+Review another virtual service definition file
+`cat samples/bookinfo/networking/virtual-service-reviews-jason-v2-v3.yaml`{{execute HOST1}}
 
+In the route definition we can see that the traffic is routed to  v2 for a end-user names 'jason' 
+and for all other users the traffic will be routed to v3
 
-1. Sign up as a new user with username "beta_user"
+We will deploy this change by running the following deployment command
+ `kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-jason-v2-v3.yaml`{{execute HOST1}}
 
-2. Login as "beta_user"
+Head back to the product page using the link below
+https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/productpage
 
-3. Add an event, by entering some text and hit enter
+Before signing in keep refreshing the page. You should see the reviews show red stars all the time. 
+This is because when the user is not 'jason' the all traffic is routed to v3 
 
-3. Click on the checkbox next to the event that was created in the list
+Now sign in with user name 'jason'
+Refresh the page multiple times and notice that each time the reviews show black stars unlike the 
+red stars shown for other users. This is because the routing rules is routing the traffic to v2
 
-4. There should not be any error. This due to the fact that for 
-    username the request will be served by v2 which have the fix.
+This validates that we can route the traffic based on request header.
 
-5. Logout and login again with username "regular"
-
-6. Go to home page and add an event
-
-7. Click on the checkbox next to the added event and this shoudl create the error.
-
-In this example we have put the rule of routing based on the username 
-and username is being passed in the header. We can setup other sophisticated rules for production systems 
