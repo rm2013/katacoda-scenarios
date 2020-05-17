@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: userservice-m
+  namespace: testspace
+spec:
+  ports:
+    - name: tcp
+      nodePort: 31014
+      port: 9000
+      targetPort: 9000
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: userservice-m
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: userservice-m-v1
+  namespace: testspace
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: userservice-m
+        version: v1
+    spec:
+      containers:
+      - name: userservice-m
+        image: rmohammad/userservice:4
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9000
+---
