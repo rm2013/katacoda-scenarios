@@ -10,6 +10,32 @@ The command below will initialise the cluster and will provide a command to setu
 
 `/opt/launch-kubeadm.sh`{{execute HOST1}}
 
+`sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo apt-get update`{{execute HOST1}}
+
+`apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00`{{execute HOST1}}
+
+`kubectl drain master --ignore-daemonsets`{{execute HOST1}}
+
+`apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{execute HOST1}} 
+
+`kubectl uncordon master`{{execute HOST1}}
+
+`kubectl drain node01 --ignore-daemonsets --delete-local-data`{{execute HOST1}}
+
+`kubeadm upgrade node`{{execute  NODE1}}
+
+`apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{EXECUTE NODE1}}
+
+`kubectl get nodes`{{execute HOST1}}
+
+`kubectl uncordon node01`{{execute HOST1}}
+
+
 Wait until the command completes.
 
 ### Deploy node on HOST2 
