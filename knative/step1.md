@@ -27,13 +27,13 @@ sudo apt-get update`{{execute HOST1}}
 
 `kubectl drain node01 --ignore-daemonsets --delete-local-data`{{execute HOST1}}
 
-`kubeadm upgrade node`{{execute  NODE1}}
+`kubeadm upgrade node`{{execute  HOST2}}
 
-`apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{EXECUTE NODE1}}
+`apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{EXECUTE HOST2}}
 
-`kubectl get nodes`{{execute HOST1}}
+`kubectl get nodes`{{execute HOST2}}
 
-`kubectl uncordon node01`{{execute HOST1}}
+`kubectl uncordon node01`{{execute HOST2}}
 
 
 Wait until the command completes.
