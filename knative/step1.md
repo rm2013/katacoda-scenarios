@@ -13,8 +13,8 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
-sudo apt-get update && \
-ls`{{execute HOST1}}
+sudo apt-get update && ls && \
+ls -al`{{execute HOST1}}
 
 `apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
    kubectl drain master --ignore-daemonsets && \
