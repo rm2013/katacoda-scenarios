@@ -6,16 +6,16 @@ Clients will communicate to the API to schedule workloads and manage the state o
 
 ### Deploy master node on HOST1
 
-The command below will initialise the cluster and will provide a command to setup the node
+Update
 
 `sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
-sudo apt-get update && ls && \
-ls -al`{{execute HOST1}}
+sudo apt-get update && apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00`{{execute HOST1}}
 
+upgrade kubeadm 1.15.12-00
 `apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
    kubectl drain master --ignore-daemonsets && \
    apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00 && \
@@ -29,21 +29,19 @@ Give some time for the version to show up
 Clear the command when the pods come up
 `clear`{{execute interrupt HOST1}}
 
+Uncordon Master and drain node01
 `kubectl uncordon master && \
 kubectl drain node01 --ignore-daemonsets --delete-local-data`{{execute HOST1}}
 
+Update Node
 `sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
-sudo apt-get update && \
-sudo apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
-sudo kubeadm upgrade node && \
-sudo apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{execute HOST2}}
+sudo apt-get update `{{execute HOST2}}
 
-
-
+Install kubeadm 1.15.12-00
 `apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
 kubeadm upgrade node && \
 apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{execute HOST2}}
