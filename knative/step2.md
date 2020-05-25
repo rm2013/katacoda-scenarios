@@ -6,7 +6,9 @@ Download the istio version 1.4.6
 
 `export ISTIO_VERSION=1.4.6`{{execute HOST1}}
 
-`curl -L https://git.io/getLatestIstio | sh -`{{execute HOST1}}
+`export ISTIO_VERSION=1.4.6 && 
+curl -L https://git.io/getLatestIstio | sh - && cd istio-${ISTIO_VERSION}`{{execute HOST1}}
+
 `cd istio-${ISTIO_VERSION}`{{execute HOST1}}
 
 `for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done`{{execute HOST1}}
