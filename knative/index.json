@@ -76,7 +76,8 @@
                       {"file": "helloworld.yaml", "target": "/opt"},
                       {"file": "calendara.yaml", "target": "/opt"},
                       {"file": "kafka-producer-consumer.yml", "target": "/opt"},
-		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"}
+		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"},
+                      {"file": "istio-system.yml", "target": "/opt"}
 	            ]
         }
     },

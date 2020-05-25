@@ -4,23 +4,13 @@
 
 Download the istio version 1.4.6
 
-`export ISTIO_VERSION=1.4.6`{{execute HOST1}}
 
 `export ISTIO_VERSION=1.4.6 && 
 curl -L https://git.io/getLatestIstio | sh - && cd istio-${ISTIO_VERSION}`{{execute HOST1}}
 
-`cd istio-${ISTIO_VERSION}`{{execute HOST1}}
-
 `for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done`{{execute HOST1}}
 
-`cat <<EOF | kubectl apply -f -
- apiVersion: v1
- kind: Namespace
- metadata:
-   name: istio-system
-   labels:
-     istio-injection: disabled
- EOF`{{execute HOST1}}
+`kubectl apply -f istio-system.yml`{{execute HOST1}}
  
  `helm template --namespace=istio-system \
     --set prometheus.enabled=false \
