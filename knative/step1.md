@@ -13,22 +13,22 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
-sudo apt-get update && \
- apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
- kubectl drain master --ignore-daemonsets && \
- apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00 && \
- kubeadm upgrade apply v1.15.12 -y`{{execute HOST1}}
+sudo apt-get update`{{execute HOST1}}
+
+`apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
+   kubectl drain master --ignore-daemonsets && \
+   apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00 && \
+   kubeadm upgrade apply v1.15.12 -y`{{execute HOST1}}
 
 `sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
-sudo apt-get update && apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00`{{execute HOST2}}
+sudo apt-get update`{{execute HOST2}}
 
 `apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00`{{execute HOST1}}
 
-`apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00`{{execute HOST2}}
 
 `kubectl drain master --ignore-daemonsets`{{execute HOST1}}
 
@@ -43,11 +43,18 @@ Give some time for the version to show up
 Clear the command when the pods come up
 `clear`{{execute interrupt HOST1}}
 
-`kubectl uncordon master`{{execute HOST1}}
+`kubectl uncordon master && \
+kubectl drain node01 --ignore-daemonsets --delete-local-data`{{execute HOST1}}
 
 `kubectl drain node01 --ignore-daemonsets --delete-local-data`{{execute HOST1}}
 
-`kubeadm upgrade node`{{execute  HOST2}}
+
+`apt-get install -y --allow-change-held-packages kubeadm=1.15.12-00 && \
+kubeadm upgrade node && \
+apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{execute HOST2}}
+
+`kubeadm upgrade node && \
+apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{execute  HOST2}}
 
 `apt-get install -y --allow-change-held-packages kubelet=1.15.12-00 kubectl=1.15.12-00`{{EXECUTE HOST2}}
 
