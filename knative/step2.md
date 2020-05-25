@@ -10,7 +10,7 @@ curl -L https://git.io/getLatestIstio | sh - && cd istio-${ISTIO_VERSION}`{{exec
 
 `for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done`{{execute HOST1}}
 
-`kubectl apply -f istio-system.yml`{{execute HOST1}}
+`kubectl apply -f /opt/istio-system.yml`{{execute HOST1}}
  
  `helm template --namespace=istio-system \
     --set prometheus.enabled=false \
