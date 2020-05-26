@@ -79,7 +79,8 @@
 		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"},
                       {"file": "istio-system.yml", "target": "/opt"},
                       {"file": "istio-lean.yml", "target": "/opt"},
-                      {"file": "istio-local-gateway.yml", "target": "/opt"}
+                      {"file": "istio-local-gateway.yml", "target": "/opt"},
+                      {"file": "hello-world.yml", "target": "/opt"}
 	            ]
         }
     },
