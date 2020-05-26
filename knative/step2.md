@@ -1,4 +1,8 @@
 
+### Install knative
+
+`kubectl apply --filename https://github.com/knative/serving/releases/download/v0.14.0/serving-crds.yaml`{{execute HOST1}}
+`kubectl apply --filename https://github.com/knative/serving/releases/download/v0.14.0/serving-core.yaml`{{execute HOST1}}
 
 ### Download istio
 
@@ -31,6 +35,21 @@ curl -L https://git.io/getLatestIstio | sh - && cd istio-${ISTIO_VERSION}`{{exec
 Change the IP 
 
 `kubectl edit cm config-domain --namespace knative-serving`{{execute HOST1}}
+
+Install Istio Controller
+`kubectl apply --filename https://github.com/knative/net-istio/releases/download/v0.14.0/release.yaml`{{execute HOST1}}
+
+Fetch External IP
+`kubectl --namespace istio-system get service istio-ingressgateway`{{execute HOST1}}
+
+Configure DNS
+`kubectl apply --filename https://github.com/knative/serving/releases/download/v0.14.0/serving-default-domain.yaml`{{execute HOST1}}
+
+Monitor the pods
+`watch kubectl get pods --namespace knative-serving`{{execute HOST1}}
+
+Clear the command when the pods come up
+`clear`{{execute interrupt HOST1}}
 
 --------Old---------
 ### Deploy istio 
