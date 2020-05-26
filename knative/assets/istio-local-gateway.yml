@@ -1,10 +1,17 @@
----# Source: istio/charts/gateways/templates/poddisruptionbudget.yamlapiVersion: policy/v1beta1kind: PodDisruptionBudgetmetadata:  name: cluster-local-gateway  namespace: istio-system
-                                                                                 labels:
-                                                                                   chart: gateways
-                                                                                   heritage: Tiller
-                                                                                   release: release-name
-                                                                                   app: cluster-local-gateway
-                                                                                   istio: cluster-local-gateway
+---
+# Source: istio/charts/gateways/templates/poddisruptionbudget.yaml
+
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: cluster-local-gateway
+  namespace: istio-system
+  labels:
+    chart: gateways
+    heritage: Tiller
+    release: release-name
+    app: cluster-local-gateway
+    istio: cluster-local-gateway
 spec:
 
   minAvailable: 1
@@ -397,4 +404,3 @@ spec:
 
 ---
 # Source: istio/templates/sidecar-injector-configmap.yaml
-

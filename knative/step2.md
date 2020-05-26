@@ -16,10 +16,10 @@ curl -L https://git.io/getLatestIstio | sh - && cd istio-${ISTIO_VERSION}`{{exec
 
 `kubectl apply -f /opt/istio-system.yml`{{execute HOST1}}
  
-`kubectl apply -f /opt/istio-lean.yaml`{{execute HOST1}}
+`kubectl apply -f /opt/istio-lean.yml`{{execute HOST1}}
 
 # Add the extra gateway.
-`kubectl apply -f /opt/istio-local-gateway.yaml`{{execute HOST1}}
+`kubectl apply -f /opt/istio-local-gateway.yml`{{execute HOST1}}
 
 `kubectl get pods --namespace istio-system`{{execute HOST1}}
 
