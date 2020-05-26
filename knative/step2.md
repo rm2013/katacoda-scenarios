@@ -25,7 +25,6 @@ curl -L https://git.io/getLatestIstio | sh - && cd istio-${ISTIO_VERSION}`{{exec
 
 `kubectl get svc -nistio-system`{{execute HOST1}}
 
-`kubectl create ns knative-serving`{{execute HOST1}}
 
 `kubectl apply --filename https://github.com/knative/net-istio/releases/download/v0.14.0/release.yaml`{{execute HOST1}}
 
