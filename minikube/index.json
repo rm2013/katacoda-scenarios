@@ -1,6 +1,6 @@
 {
-    "title": " Demo  Kube Cluster, Kantive Kafka, Istio, and multiple versions of Calendar App",
-    "description": "Learn how to deploy a Kube cluster, Kafka, Istio  and multiple versions of Calendar App",
+    "title": " Demo Minikuber, Kantive Kafka, Istio, and multiple versions of Calendar App",
+    "description": "Learn minikube , Kafka, Istio  and multiple versions of Calendar App",
     "difficulty": "intermediate",
     "time": "45 minutes",
     "details": {
@@ -93,6 +93,6 @@
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
-      "imageid": "kubernetes-cluster-running"
+      "imageid": "minikube-running"
     }
 }
