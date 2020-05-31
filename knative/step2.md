@@ -2,6 +2,8 @@
 ### Install knative
 
 `kubectl apply --filename https://github.com/knative/serving/releases/download/v0.14.0/serving-crds.yaml`{{execute HOST1}}
+
+
 `kubectl apply --filename https://github.com/knative/serving/releases/download/v0.14.0/serving-core.yaml`{{execute HOST1}}
 
 ### Download istio
