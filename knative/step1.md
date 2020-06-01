@@ -6,6 +6,11 @@ Clients will communicate to the API to schedule workloads and manage the state o
 
 ### Deploy master node on HOST1
 
+New
+
+No Action needed
+
+Old
 Update
 
 `sudo apt-get update && sudo apt-get install -y apt-transport-https curl

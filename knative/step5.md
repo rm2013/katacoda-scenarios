@@ -1,4 +1,7 @@
+New
+kubectl delete -f https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml
 
+Old
 
 We will deploy CalendarApp which includes 2 versions of calendarservice
 

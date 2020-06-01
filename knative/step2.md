@@ -1,6 +1,21 @@
 
 ### Install knative
+New
+curl -L https://github.com/knative/serving/releases/download/v0.5.1/istio-lean.yaml | sed 's/LoadBalancer/NodePort/' | kubectl apply --filename -
 
+kubectl get pods --namespace istio-system
+
+kubectl label namespace default istio-injection=enabled
+
+kubectl get crds | grep .istio.
+
+curl -L https://github.com/knative/serving/releases/download/v0.5.1/serving.yaml | sed 's/LoadBalancer/NodePort/' | kubectl apply --filename -
+
+kubectl get pods --namespace knative-serving
+
+kubectl get crds | grep .knative.
+
+Old
 `kubectl apply --filename https://github.com/knative/serving/releases/download/v0.14.0/serving-crds.yaml`{{execute HOST1}}
 
 

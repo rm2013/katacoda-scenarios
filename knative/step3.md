@@ -1,6 +1,27 @@
 ## Setup BookInfo example and validate isto elements
 
 ### Setup isto for default namespace
+
+New
+
+curl https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml
+
+kubectl create -f https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml
+
+kubectl get deployments,rs,pods,services
+
+kubectl get ksvc helloworld-go
+
+kubectl get routes
+
+kubectl get revisions
+
+
+
+
+
+Old
+
 Enable istio-injection for the default namespace
 `kubectl label namespace default istio-injection=enabled`{{execute HOST1}}
 
