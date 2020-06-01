@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Route
+metadata:
+  name: rev-demo # Route name is unchanged, since we're updating an existing Route
+  namespace: default
+spec:
+  traffic:
+    - revisionName: 1
+      percent: 0 # 0% traffic still going to the first revision
+      tag: v1
+    - revisionName: 2
+      percent: 100 # All of traffic routed to the second revision
+      tag: v2 # A named route

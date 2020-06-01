@@ -7,8 +7,9 @@ Clients will communicate to the API to schedule workloads and manage the state o
 ### Deploy master node on HOST1
 
 New
-
-No Action needed
+`curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 && \
+    chmod 700 get_helm.sh && \
+    ./get_helm.sh`{{execute HOST1}}
 
 Old
 Update

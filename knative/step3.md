@@ -4,17 +4,17 @@
 
 New
 
-curl https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml
+`curl https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml`{{execute HOST1}}
 
-kubectl create -f https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml
+`kubectl create -f https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml`{{execute HOST1}}
 
-kubectl get deployments,rs,pods,services
+`kubectl get deployments,rs,pods,services`{{execute HOST1}}
 
-kubectl get ksvc helloworld-go
+`kubectl get ksvc helloworld-go`{{execute HOST1}}
 
-kubectl get routes
+`kubectl get routes`{{execute HOST1}}
 
-kubectl get revisions
+`kubectl get revisions`{{execute HOST1}}
 
 
 

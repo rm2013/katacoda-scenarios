@@ -1,12 +1,12 @@
 New
 
-export ADDRESS=$(kubectl get node --output 'jsonpath={.items[0].status.addresses[0].address}'):$(kubectl get svc istio-ingressgateway --namespace istio-system --output 'jsonpath={.spec.ports[?(@.port==80)].nodePort}')
+`export ADDRESS=$(kubectl get node --output 'jsonpath={.items[0].status.addresses[0].address}'):$(kubectl get svc istio-ingressgateway --namespace istio-system --output 'jsonpath={.spec.ports[?(@.port==80)].nodePort}')`{{execute HOST1}}
 
-export SERVICE=$(kubectl get ksvc helloworld-go --output jsonpath='{.status.domain}')
+`export SERVICE=$(kubectl get ksvc helloworld-go --output jsonpath='{.status.domain}')`{{execute HOST1}}
 
-echo Service $SERVICE is at $ADDRESS
+`echo Service $SERVICE is at $ADDRESS`{{execute HOST1}}
 
-curl -v -H "Host: $SERVICE" http://$ADDRESS
+`curl -v -H "Host: $SERVICE" http://$ADDRESS`{{execute HOST1}}
 
 
 
