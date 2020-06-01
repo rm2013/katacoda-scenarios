@@ -2,6 +2,27 @@
 
 ### Setup isto for default namespace
 
+
+Ultimate
+1.
+`kubectl apply -f /opt/hello-worldV1.yml`{{execute}}
+2.
+`kubectl apply -f /opt/hello-worldV2.yml`{{execute}}
+3.
+`kubectl apply -f hello-world-route100-0.yml`{{execute}}
+
+`kubectl apply -f hello-world-route50-50.yml`{{execute}}
+
+`kubectl apply -f hello-world-route0-100.yml`{{execute}}
+
+`kubectl get deployments,rs,pods,services`{{execute HOST1}}
+
+`kubectl get ksvc helloworld-go`{{execute HOST1}}
+
+`kubectl get routes`{{execute HOST1}}
+
+`kubectl get revisions`{{execute HOST1}}
+
 New
 
 `curl https://raw.githubusercontent.com/sylus/helloworld-go/master/service.yaml`{{execute HOST1}}
