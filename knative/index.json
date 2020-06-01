@@ -84,7 +84,11 @@
                       {"file": "istio-system.yml", "target": "/opt"},
                       {"file": "istio-lean.yml", "target": "/opt"},
                       {"file": "istio-local-gateway.yml", "target": "/opt"},
-                      {"file": "hello-world.yml", "target": "/opt"}
+                      {"file": "hello-worldV1.yml", "target": "/opt"},
+                      {"file": "hello-worldV2.yml", "target": "/opt"},
+                      {"file": "hello-world-route0-100.yml", "target": "/opt"},
+                      {"file": "hello-world-route50-50.yml", "target": "/opt"},
+                      {"file": "hello-world-route100-0.yml", "target": "/opt"}
 	            ]
         }
     },
