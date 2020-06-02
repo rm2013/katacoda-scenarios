@@ -8,6 +8,25 @@ New
 
 `curl -v -H "Host: $SERVICE" http://$ADDRESS`{{execute HOST1}}
 
+Get revisions
+`REVISIONS=($(kubectl get revision -l "serving.knative.dev/service=stock-service-example" --output \
+ jsonpath="{.items[*].metadata.name}"))`{{execute HOST1}}
+ 
+ Display revisions
+`echo ${REVISIONS[*]}`{{execute HOST1}}
+
+Set Current and Candidate versions
+
+`CURRENT=${REVISIONS[0]}`{{execute HOST1}}
+
+`CANDIDATE=${REVISIONS[1]}`{{execute HOST1}}
+
+`kubectl apply -f /opt/hello-world-route100-0.yml`{{execute HOST1}}
+
+`kubectl apply -f /opt/hello-world-route50-50.yml`{{execute HOST1}}
+
+`kubectl apply -f /opt/hello-world-route0-100.yml`{{execute HOST1}}
+
 
 
 

@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   release:
-    revisions: [ "helloworld-go-cjcgp", "helloworld-go-ll6dn"]
+    revisions: [ "${CURRENT}", "${CANDIDATE}"]
     rolloutPercent: 50
     configuration:
       revisionTemplate:
