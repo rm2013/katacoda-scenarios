@@ -1,0 +1,39 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: calendarservice-m-gateway
+  namespace: testspace
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 9001
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: calendarservice-m
+  namespace: testspace
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - calendarservice-m-gateway
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: beta-user
+    route:
+      - destination:
+          host: calendarservice-m
+          subset: v2
+  - route:
+    - destination:
+        host: calendarservice-m
+        subset: v1
