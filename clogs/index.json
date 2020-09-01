@@ -1,8 +1,8 @@
 {
-    "title": " Demo  Kube Cluster, Kantive Kafka, Istio, and multiple versions of Calendar App",
-    "description": "Learn how to deploy a Kube cluster, Kafka, Istio  and multiple versions of Calendar App",
-    "difficulty": "intermediate",
-    "time": "45 minutes",
+    "title": " Demo  Kube Cluster with clogs",
+    "description": "Learn how to deploy a Kube plugin with clogs",
+    "difficulty": "Beginner",
+    "time": "15 minutes",
     "details": {
         "steps": [
             {
@@ -20,22 +20,6 @@
             {
               "title": "Step 4 - Deploy kafka elements",
               "text": "step4.md"
-            },
-            {
-              "title": "Step 5 - Deploy elements of Calendar App",
-              "text": "step5.md"
-            },
-            {
-              "title": "Step 6 - Validate Calendar App deployment",
-              "text": "step6.md"
-            },
-            {
-              "title": "Step 7 - Validate the fix to the Calendar App",
-              "text": "step7.md"
-            },
-            {
-              "title": "Step 8 - Changing user's experience by changing header values",
-              "text": "step8.md"
             }
         ],
         "intro": {
@@ -93,7 +77,7 @@
         }
     },
     "environment": {
-        "uilayout": "terminal-terminal",
+        "uilayout": "terminal",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
