@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: calendarservice-m
+  namespace: testspace
+spec:
+  ports:
+  - port: 9001
+      name: http
+  selector:
+    app: calendarservice-m
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: calendarservice-m-v1
+  namespace: testspace
+spec:
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: calendarservice-m
+        version: v1
+    spec:
+      containers:
+      - name: calendarservice-m-v1
+        image: rmohammad/calendarservice:4
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9001
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: calendarservice-m-v2
+  namespace: testspace
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: calendarservice-m
+        version: v2
+    spec:
+      containers:
+      - name: calendarservice-m-v2
+        image: rmohammad/calendarservice_v2:3
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9001
+---

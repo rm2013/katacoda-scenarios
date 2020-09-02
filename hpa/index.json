@@ -1,0 +1,37 @@
+{
+    "title": " Demo  Kube Cluster with HPA",
+    "description": "Learn how to deploy a Horizontal Pod Autoscaling",
+    "difficulty": "Beginner",
+    "time": "15 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Step 1 - Deploy services",
+                "text": "step1.md"
+            },
+            {
+                "title": "Step 2 - Deploy HPA and test",
+                "text": "step2.md"
+            }
+        ],
+        "intro": {
+          "text": "intro.md",
+          "credits": ""
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+          "host01": [
+
+	            ]
+        }
+    },
+    "environment": {
+        "uilayout": "terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+    },
+    "backend": {
+      "imageid": "kubernetes-cluster-running"
+    }
+}

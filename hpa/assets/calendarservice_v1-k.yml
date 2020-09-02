@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1 # Current version of Knative
+kind: Service
+metadata:
+  name: calendarservice # The name of the app
+  namespace: testspace # The namespace the app will use
+spec:
+  template:
+    spec:
+      containers:
+        - image: rmohammad/calendarservice:4 # The URL to the image of the app

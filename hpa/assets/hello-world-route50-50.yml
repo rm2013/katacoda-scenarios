@@ -1,0 +1,17 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: helloworld-go
+  namespace: default
+spec:
+  release:
+    revisions: [ "${CURRENT}", "${CANDIDATE}"]
+    rolloutPercent: 50
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: docker.io/sylus/helloworld-go
+            env:
+              - name: RESOURCE
+                value: share
