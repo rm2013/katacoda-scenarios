@@ -12,14 +12,6 @@
             {
                 "title": "Step 2 - Install istio",
                 "text": "step2.md"
-            },
-            {
-                "title": "Step 3 - Setup BookInfo example and validate isto elements",
-                "text": "step3.md"
-            },
-            {
-              "title": "Step 4 - Deploy kafka elements",
-              "text": "step4.md"
             }
         ],
         "intro": {
@@ -31,48 +23,7 @@
         },
         "assets": {
           "host01": [
-                      {"file": "dashboard.yaml", "target": "/root"},
-                      {"file": "000storageclass.yml", "target": "/opt"},
-                      {"file": "010pv-volume.yml", "target": "/opt"},
-                      {"file": "100zookeeper.yml", "target": "/opt"},
-                      {"file": "110zookeeper-headless.yml", "target": "/opt"},
-                      {"file": "120zookeeper-statefulset.yml", "target": "/opt"},
-                      {"file": "130zookeeper-disruptionbudget.yml", "target": "/opt"},
-                      {"file": "200kafka.yml", "target": "/opt"},
-                      {"file": "210kafka-headless.yml", "target": "/opt"},
-                      {"file": "220kafka-statefulset.yml", "target": "/opt"},
-                      {"file": "init.sh", "target": "/opt"},
-                      {"file": "istio-services.yml", "target": "/opt"},
-                      {"file": "calendarapp.yml", "target": "/opt"},
-                      {"file": "calendarapp-k.yml", "target": "/opt"},
-                      {"file": "calendarservice_v1.yml", "target": "/opt"},
-                      {"file": "calendarservice_v1-k.yml", "target": "/opt"},
-                      {"file": "calendarservice_v2.yml", "target": "/opt"},
-                      {"file": "calendarservice_v2-k.yml", "target": "/opt"},
-                      {"file": "userservice.yml", "target": "/opt"},
-                      {"file": "userservice-k.yml", "target": "/opt"},
-                      {"file": "calendarapp-m-gateway.yml", "target": "/opt"},
-                      {"file": "calendarapp-m2-gateway.yml", "target": "/opt"},
-                      {"file": "calendarapp-m.yml", "target": "/opt"},
-                      {"file": "calendarapp-m2.yml", "target": "/opt"},
-                      {"file": "calendarservice-m.yml", "target": "/opt"},
-                      {"file": "calendarservice-m2.yml", "target": "/opt"},
-                      {"file": "calendarservice-m-gateway.yml", "target": "/opt"},
-                      {"file": "destination-rule-all-mtls.yml", "target": "/opt"},
-                      {"file": "virtual-service-calendarservice-m-v1-v2.yml", "target": "/opt"},
-                      {"file": "userservice-m.yml", "target": "/opt"},
-                      {"file": "helloworld.yaml", "target": "/opt"},
-                      {"file": "calendara.yaml", "target": "/opt"},
-                      {"file": "kafka-producer-consumer.yml", "target": "/opt"},
-		              {"file": "kafka-producer-consumer-gateway.yml", "target": "/opt"},
-                      {"file": "istio-system.yml", "target": "/opt"},
-                      {"file": "istio-lean.yml", "target": "/opt"},
-                      {"file": "istio-local-gateway.yml", "target": "/opt"},
-                      {"file": "hello-worldV1.yml", "target": "/opt"},
-                      {"file": "hello-worldV2.yml", "target": "/opt"},
-                      {"file": "hello-world-route0-100.yml", "target": "/opt"},
-                      {"file": "hello-world-route50-50.yml", "target": "/opt"},
-                      {"file": "hello-world-route100-0.yml", "target": "/opt"}
+
 	            ]
         }
     },
