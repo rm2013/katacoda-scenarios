@@ -5,14 +5,10 @@ In this scenario you'll learn how to install HPA for a service
 
 
 ## Step1:
-Download the clogs plugin release from github
+Setup greeting and time service
+
 
 ## Step2:
-move the clogs plugin file to appropriate place
+create HPA for greeting and start load and validate 
 
-## Step3: 
-Validate the installation
-
-## Step4: 
-Run some tests
  

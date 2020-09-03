@@ -1,20 +1,19 @@
 
-Install  clogs plugin
+Create hpa
 
-### Install clogs
-Download clogs release
-`wget https://github.com/rm2013/kubectl-clogs/releases/download/v0.0.2/kubectl-clogs_0.0.2_Linux_x86_64.tar.gz`{{execute HOST1}}
+### Create HPA
+`kubectl -n testspace autoscale deployment greeting --cpu-percent=20 --min=1 --max=10`{{execute HOST1}}
+`kubectl -n testspace autoscale deployment time --cpu-percent=50 --min=1 --max=10`{{execute HOST1}}
 
-Unzip clogs
+Check the HPA
+`kubectl -n testspace get hpa`{{execute HOST1}}
 
-`tar xvfz kubectl-clogs_0.0.2_Linux_x86_64.tar.gz`{{execute HOST1}}
-
-Move the clogs file to /usr/local/bin
+Start a load generator pod based on busybox
  
-`mv kubectl-clogs /usr/local/bin`{{execute HOST1}}
+`kubectl -n testspace run -it --rm load-generator --image=busybox /bin/sh`{{execute HOST1}}
 
-Validate the installation of clogs
-`kubectl plugin list`{{execute HOST1}}
+Put load by calling the greeting end point
+`while true; do wget -q -O- http://greeting:8080; done`{{execute HOST1}}
 
-Run a test
-`kubectl clogs -A kube`{{execute HOST1}}
+Open another terminal and check the hpa
+`kubectl -ntestspace get hpa`{{execute HOST1}}
