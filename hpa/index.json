@@ -23,7 +23,7 @@
         },
         "assets": {
             "host01": [
-                {"file": "greeting.yml", "target": "/root"},
+                {"file": "greeting.yml", "target": "/opt"},
                 {"file": "time.yml", "target": "/opt"},
                 {"file": "010pv-volume.yml", "target": "/opt"},
                 {"file": "100zookeeper.yml", "target": "/opt"},
